@@ -1,0 +1,14 @@
+class Dog{
+		
+    int age; //public instance
+ 
+    public Dog() {
+
+    }  
+
+
+
+	public static void main(String[] args) {
+
+	}
+}
