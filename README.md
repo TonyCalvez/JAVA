@@ -231,4 +231,208 @@ Pour le fichier *voiture.java* :
 
 ```
 
-#### 5.4 Accesseurs :
+#### 5.5  Constructeur : 
+
+> Le constructeur d'une classe est une méthode portant le même nom que la classe elle-même.
+>
+> On lui attribut des paramètres mais il ne retourne aucun type (même pas de `void`).
+
+Pour le fichier *voiture.java* : 
+
+```java
+[MODIFICATEUR] class Voiture {
+    private String nom;
+    private String prenom;
+    private LocalDate miseencirculation;
+    
+    public Voiture (String n, String p, LocalDate d){
+        nom = n;
+        prenom = p;
+        miseencirculation = d;
+    }
+}
+
+```
+
+#### 5.6 Héritages :
+
+> Pour savoir si deux classes peuvent être l'héritage de l'une et de l'autre, on demande si classe1 `est une sorte de` classe2.
+
+> Afin de relier la classe mère avec la classe fille, nous utilisons juste le mot `extend`.
+
+Pour associer la variable dans une classe, nous utilisons : `this`.
+
+
+
+#### 5.7 Classes Abstraites : 
+
+> Le constructeur d'une classe est une méthode portant le même nom que la classe elle-même.
+>
+> On lui attribut des paramètres mais il ne retourne aucun type (même pas de `void`).
+
+Pour le fichier *voiture.java* : 
+
+```java
+[MODIFICATEUR] abstract class Voiture {
+    private String nom;
+    private String prenom;
+    private LocalDate miseencirculation;
+    
+    public Voiture (String n, String p, LocalDate d){
+        nom = n;
+        prenom = p;
+        miseencirculation = d;
+    }
+}
+
+```
+
+
+
+### 6 Design Pattern
+
+Source: https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm
+
+Genérer un `package com.TonyCalvez.EncryptDecrypt;`
+
+#### 6.1 Réaliser une interface :
+
+Créer un fichier :  *Strategy.java*
+
+````java
+public interface Strategy {
+    public String doEncrypt(String word); //fonctionnalité n°1
+}
+````
+
+
+
+#### 6.2 Associer des classes à notre interface :
+
+Ensuite, nous pouvons dériver 1,2,3 ... n fois cette fonctionnalité dans une classe diffèrente à chaque fois.
+
+Créer un fichier :  *Ceasar.java*
+
+```java
+public class Ceasar implements Strategy {
+    private int shift;
+
+    public Ceasar(int shift) {
+        this.shift = shift;
+    }
+
+    @Override
+    public String doEncrypt(String word) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : word.toCharArray()) {
+            int charShift = 97;
+            if (Character.isUpperCase(c))
+                charShift = 65;
+            char ch = (char) (((int) c + shift - charShift) % 26 + charShift);
+            sb.append(ch);
+        }
+        return sb.toString();
+    }
+}
+```
+
+
+
+Créer un fichier :  *Substitution.java*
+
+```java
+public class Substitution implements Strategy {
+    private String keySeed;
+
+    public Substitution(String keySeed) {
+        this.keySeed = keySeed;
+    }
+
+    @Override
+    public String doEncrypt(String word) {
+        StringBuilder sb = new StringBuilder(word.length());
+        for (int i = 0; i < word.length(); i++) {
+            char m = word.charAt(i);
+            char k = keySeed.charAt(i % keySeed.length());;
+            int mValue = (int) m - ((Character.isUpperCase(m)) ? 65 : 97);
+            int kValue = (int) k - ((Character.isUpperCase(k)) ? 65 : 97);
+            int cValue = ((mValue + kValue) % 26 + 26) % 26;;
+            sb.append((char) (cValue + 97));
+        }
+        return sb.toString();
+    }
+}
+```
+
+
+
+#### 6.3 Réaliser une classe context :
+
+Créer un fichier :  *Context.java*
+
+```java
+public class Context {
+    private Strategy strategy;
+
+    public Context(Strategy strategy){
+        this.strategy = strategy;
+    }
+    
+    public void setStrategy(Strategy s){
+        this.strategy= s;
+    }
+
+    public String executeStrategyEncrypt(String word){
+        return strategy.doEncrypt(word);
+    }
+}
+```
+
+
+
+#### 6.4 Executer avec le Main :
+
+Créer un fichier :  *Main.java*
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Context context = new Context(new Ceasar(13));
+        context.setStrategy(new Ceasar(21));
+        context.executeStrategyEncrypt("MOT");
+        System.out.println(context.executeStrategyEncrypt("MOT"));
+        System.out.println(context.executeStrategyDecrypt(context.executeStrategyEncrypt("MOT")));
+    }
+}
+```
+
+
+
+### 7 Tester avec Junit
+
+#### 7.1 Génerer la classe automatiquement
+
+1- Cliquer sur votre classe puis <kbd>Alt</kbd>+<kbd>Enter</kbd>.
+
+2- Cliquer dans la boite de dialogue : `Create Test`.
+
+3- Tout cocher
+
+4- Une nouvelle classe pour le test est genérée.
+
+#### 7.2 Tester son programme
+
+Par exemple dans :
+
+```java
+class CeasarTest {
+    Ceasar c;
+    @org.junit.jupiter.api.Test
+    void doDecrypt() {
+        assertEquals("abcde", this.c.doDecrypt("cdefg"));
+    }
+}
+```
+
+Nous savons que notre code, nous retournera  `abcde` si nous entrons `cdefg`. A partir de la fonction `assertEquals()`, nous pouvons tester la fonction.
+
