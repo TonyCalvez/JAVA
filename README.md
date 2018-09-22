@@ -125,6 +125,8 @@ int[][] matrice2d;
 
 #### 5.1 Déclaration :
 
+**EXEMPLE :**
+
 Pour le fichier *NomDeLaClasse.java* : 
 
 ```java
@@ -145,6 +147,8 @@ Pour le fichier *NomDeLaClasse.java* :
 | `final`    | Doit être instancié                      |
 
 #### 5.3 Variables :
+
+**EXEMPLE :**
 
 Pour le fichier *NomDeLaClasse.java* : 
 
@@ -169,6 +173,8 @@ Pour le fichier *voiture.java* :
 #### 5.3 Méthodes :
 
 > Une méthode est une fonction codée directement dans la classe.
+
+**EXEMPLE :**
 
 Pour le fichier *NomDeLaClasse.java* : 
 
@@ -208,6 +214,8 @@ Pour le fichier *voiture.java* :
 | `get`  | Retourne la valeur d'une variable           |
 | `is`   | Retourne la valeur d'une variable booléenne |
 
+**EXEMPLE :**
+
 Pour le fichier *voiture.java* : 
 
 ```java
@@ -236,6 +244,10 @@ Pour le fichier *voiture.java* :
 > Le constructeur d'une classe est une méthode portant le même nom que la classe elle-même.
 >
 > On lui attribut des paramètres mais il ne retourne aucun type (même pas de `void`).
+>
+> Elle permet d'importer des paramètres directement du main.
+
+**EXEMPLE :**
 
 Pour le fichier *voiture.java* : 
 
@@ -254,21 +266,13 @@ Pour le fichier *voiture.java* :
 
 ```
 
-#### 5.6 Héritages :
-
-> Pour savoir si deux classes peuvent être l'héritage de l'une et de l'autre, on demande si classe1 `est une sorte de` classe2.
-
-> Afin de relier la classe mère avec la classe fille, nous utilisons juste le mot `extend`.
-
-Pour associer la variable dans une classe, nous utilisons : `this`.
-
-
-
-#### 5.7 Classes Abstraites : 
+#### 5.6 Classes Abstraites : 
 
 > Le constructeur d'une classe est une méthode portant le même nom que la classe elle-même.
 >
 > On lui attribut des paramètres mais il ne retourne aucun type (même pas de `void`).
+
+**EXEMPLE :**
 
 Pour le fichier *voiture.java* : 
 
@@ -286,6 +290,81 @@ Pour le fichier *voiture.java* :
 }
 
 ```
+
+Elle permettra de définir plus tard dans une classe fille les propriétés.
+
+#### 5.7 Héritages (Inheritance) :
+
+Pour savoir si deux classes peuvent être l'héritage de l'une et de l'autre, on demande si classe1 `est une sorte de` classe2.
+
+L'héritage permet de communiquer et acquérir méthodes ou les attributs par un couplage fort d'une classe mère. Toutes modifications réalisées dans celle-ci entraine une modification sur la classe fille.
+
+Cette relation hiérarchique est divisée en deux: une *classe mère* (`superclass`) et une *sous-classe* (`subclass`) et en Java il ne peut y avoir qu'un seul héritage.
+
+Afin de relier la classe mère avec la classe fille, nous utilisons juste le mot `extend`.
+
+Pour associer la variable dans une classe, nous utilisons : `this`.
+
+
+
+#### 5.7 Délégation : 
+
+La délégation met en oeuvre un Design Pattern (exemple : paragraphe 6).
+
+La tâche est confiée à quelqu'un d'autre avec un couplage de la classe "mère".
+
+Afin de relier la classe mère avec la classe mandatée, nous venons lier la classe secrétaire et la classe boss dans le main.
+
+**EXEMPLE :**
+
+Pour le fichier *Boss.java* : 
+
+```java
+public class Boss {
+
+        private Secretary secretary;
+
+        public Boss(Secretary secretary){
+            this.secretary = secretary;
+        }
+
+        public String work() {
+            return this.secretary.work();
+        }
+}
+
+```
+
+Pour le fichier *Secretary.java* : 
+
+```java
+public class Secretary {
+    public String work() {
+        return "This is my work !!!!";
+    }
+}
+
+```
+
+Pour le fichier *Main.java* : 
+
+```java
+public class Main {
+
+    public static void main(String args[]) {
+        Secretary s = new Secretary();
+        Boss b = new Boss(s);
+        System.out.println(b.work());
+    }
+}
+
+```
+
+
+
+#### 5.8 Composition :
+
+La composition vient intégrer des méthodes supplémentaires des classes mères et `encapsule` un ensemble de méthodes.
 
 
 
@@ -310,6 +389,8 @@ public interface Strategy {
 #### 6.2 Associer des classes à notre interface :
 
 Ensuite, nous pouvons dériver 1,2,3 ... n fois cette fonctionnalité dans une classe diffèrente à chaque fois.
+
+**EXEMPLE :**
 
 Créer un fichier :  *Ceasar.java*
 
