@@ -365,7 +365,9 @@ public class Main {
 #### 5.8 Composition :
 
 La composition vient intégrer des méthodes supplémentaires des classes mères et `encapsule` un ensemble de méthodes.
+La composition est un procédé de génie logiciel qui permet de regrouper un ensemble de comportement. 
 
+Une interface est une structure Java qui encapsule un ensemble de méthodes dont le corps est vide et dont les prototypes décrivent un comportement particulier.
 
 
 ### 6 Design Pattern
