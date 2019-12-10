@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="JSON-B">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../SUBJECT/simu_base_common/dependencies/JSON-B/yasson-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../SUBJECT/simu_base_common/dependencies/JSON-B/javax.json.bind-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../SUBJECT/simu_base_common/dependencies/JSON-B/javax.json-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

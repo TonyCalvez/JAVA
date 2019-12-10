@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/INGENIERIE_SYSTEME_TD0.iml" filepath="$PROJECT_DIR$/INGENIERIE_SYSTEME_TD0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SUBJECT/simu_base_common/simu_base_common.iml" filepath="$PROJECT_DIR$/../SUBJECT/simu_base_common/simu_base_common.iml" />
+    </modules>
+  </component>
+</project>

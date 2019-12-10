@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="apachecommonmath">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../SUBJECT/simu_base_common/dependencies/apachecommonmath/commons-math3-3.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../SUBJECT/simu_base_common/dependencies/apachecommonmath/commons-math3-3.6.1-tools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
