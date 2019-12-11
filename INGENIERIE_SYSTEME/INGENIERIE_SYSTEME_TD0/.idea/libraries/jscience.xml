@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jscience">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../SUBJECT/simu_base_common/dependencies/jscience/jscience.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
