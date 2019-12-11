@@ -40,7 +40,6 @@ public class Bouee3DRepresentation2 extends Representation3D {
 	    s.setMaterial(material);
 	    maBouee.getChildren().add(s);
 	    
-	    
 	    world.getChildren().add(maBouee);
 
 	}

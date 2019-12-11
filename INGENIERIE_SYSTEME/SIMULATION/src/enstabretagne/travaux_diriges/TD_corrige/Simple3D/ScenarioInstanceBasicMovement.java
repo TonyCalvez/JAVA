@@ -23,7 +23,7 @@ public class ScenarioInstanceBasicMovement implements IScenarioInstance {
 	public IScenario getScenarioInstance() {
 		BasicMvtScenarioFeatures bsf = new BasicMvtScenarioFeatures("BSF");
 		
-		//Création du navire et des points de passage
+		//Crï¿½ation du navire et des points de passage
 		HashMap<String,Point3D> positionsCles = new HashMap<String, Point3D>();
 		positionsCles.put("start", new Point3D(0,0,0));
 		positionsCles.put("PointCible1", new Point3D(10,10,0));
@@ -36,12 +36,12 @@ public class ScenarioInstanceBasicMovement implements IScenarioInstance {
 		
 		MovableState mst = new MovableState(new Point3D(0,0,0), new Point3D(1,1,0), Point3D.ZERO, new Point3D(0,0,45.0), new Point3D(10,5,0.0), Point3D.ZERO);
 
-		//Création de bouees
+		//Crï¿½ation de bouees
 		int i=0;
 		int N=1;
 		positionsCles = new HashMap<String, Point3D>();
 		for(i=0;i<N;i++) {
-			bsf.getBouees().put(new BoueeFeatures("B1",5,1,3.0), new BoueeInit("B1",new Point3D(0,0,0),Color.RED));
+			bsf.getBouees().put(new BoueeFeatures("B1",5,1,3.0), new BoueeInit("B1",new Point3D(0,0,0),Color.GREEN));
 		}
 				
 		
