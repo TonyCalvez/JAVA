@@ -40,7 +40,7 @@ public abstract class SimEvent implements ISimEvent{
     
     /** The init rank. */
     @SuppressWarnings("unused")
-	private int initRank;
+	protected int initRank;
 
 	/* (non-Javadoc)
 	 * @see enstabretagne.simulation.core.ISimEvent#ScheduleDate()

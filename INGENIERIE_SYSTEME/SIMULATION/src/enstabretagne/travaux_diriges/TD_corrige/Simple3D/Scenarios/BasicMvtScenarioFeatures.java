@@ -3,7 +3,6 @@ package enstabretagne.travaux_diriges.TD_corrige.Simple3D.Scenarios;
 import java.util.HashMap;
 
 import enstabretagne.simulation.components.data.SimFeatures;
-import enstabretagne.simulation.components.data.SimInitParameters;
 import enstabretagne.travaux_diriges.TD_corrige.Simple3D.SimEntity.Bouee.BoueeFeatures;
 import enstabretagne.travaux_diriges.TD_corrige.Simple3D.SimEntity.Bouee.BoueeInit;
 

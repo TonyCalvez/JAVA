@@ -217,7 +217,6 @@ public class LogicalDuration implements Comparable<LogicalDuration> {
 	}
 
 
-
 	/* (non-Javadoc)
 	 * @see java.lang.Comparable#compareTo(java.lang.Object)
 	 */

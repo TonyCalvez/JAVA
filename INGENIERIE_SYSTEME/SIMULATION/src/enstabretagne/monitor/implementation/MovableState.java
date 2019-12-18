@@ -12,7 +12,19 @@ public class MovableState implements IMovable {
 	Point3D vitesse;
 	Point3D acceleration;
 
+	/*
+	 * rotationXYZ exprime : 
+	 * - en x, l'angle de rotation en degrès selon l'axe des x
+	 * - en y, l'angle de rotation en degrès selon l'axe des y
+	 * - en z, l'angle de rotation en degrès selon l'axe des z
+	 */
 	Point3D rotationXYZ;
+	/*
+	 * rotationXYZ exprime : 
+	 * - en x, la vitesse de rotation en degrès selon l'axe des x
+	 * - en y, la vitesse de rotation en degrès selon l'axe des y
+	 * - en z, la vitesse de rotation en degrès selon l'axe des z
+	 */
 	Point3D vitesseRotationXYZ;
 	Point3D accelerationRotationXYZ;
 	

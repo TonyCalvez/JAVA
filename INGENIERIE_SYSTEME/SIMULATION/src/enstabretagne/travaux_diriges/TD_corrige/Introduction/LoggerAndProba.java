@@ -81,7 +81,7 @@ public class LoggerAndProba{
 	public void run() {
 		int i = 0;
 		
-		for(i=0;i<100000;i++) {
+		for(i=0;i<100;i++) {
 			etatGaussien = random.nextGaussian();
 			
 			Logger.Data(this);

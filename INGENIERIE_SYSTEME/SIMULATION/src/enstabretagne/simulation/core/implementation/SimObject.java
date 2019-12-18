@@ -18,6 +18,7 @@ import enstabretagne.simulation.core.IEngine;
 import enstabretagne.simulation.core.ISimEngine;
 import enstabretagne.simulation.core.ISimEvent;
 import enstabretagne.simulation.core.ISimObject;
+import enstabretagne.simulation.core.SortedList;
 import enstabretagne.simulation.core.notifications.SimObjectActivationChangedEventHandler;
 
 // TODO: Auto-generated Javadoc
@@ -45,7 +46,7 @@ public abstract class SimObject implements ISimObject{
 	 * Reinit sim object.
 	 */
 	protected void reinitSimObject() {
-	      timeEvents = new TreeMap<ISimEvent, ISimEvent>();
+	      timeEvents = new SortedList<ISimEvent>();
 	      simObjectActivationChangedListeners = new ArrayList<SimObjectActivationChangedEventHandler>();
 		
 	}
@@ -128,7 +129,7 @@ public abstract class SimObject implements ISimObject{
 	 */
 	protected void activate() {
 	      // add local timeEvent to engine Event list
-	      for(ISimEvent ev : timeEvents.keySet())
+	      for(ISimEvent ev : timeEvents)
 	        engine.OnEventPosted(ev);
 
 	      // Fire event
@@ -141,7 +142,7 @@ public abstract class SimObject implements ISimObject{
      */
     protected void deactivate() {
 	      // remove local timeEvents from engine Event list 
-	      for(ISimEvent ev : timeEvents.keySet())
+	      for(ISimEvent ev : timeEvents)
 	        engine.OnEventUnPosted(ev);
 
 	      // Fire event
@@ -155,8 +156,8 @@ public abstract class SimObject implements ISimObject{
      * @see enstabretagne.simulation.core.ISimObject#terminate(boolean)
      */
     public void terminate(boolean restart) {
-	      while(!timeEvents.isEmpty())
-	    	  UnPost(timeEvents.firstKey());
+	      while(timeEvents.size()>0)
+	    	  UnPost(timeEvents.first());
 	      timeEvents = null;
 	      
 	}
@@ -224,7 +225,7 @@ public abstract class SimObject implements ISimObject{
 	
 	
 	/** The time events. */
-	private TreeMap<ISimEvent, ISimEvent> timeEvents;
+	private SortedList<ISimEvent> timeEvents;
 	
 	/* (non-Javadoc)
 	 * @see enstabretagne.simulation.core.ISimObject#Post(enstabretagne.simulation.core.ISimEvent)
@@ -240,7 +241,7 @@ public abstract class SimObject implements ISimObject{
 	public void Post (ISimEvent ev,LogicalDateTime t) {
 	      ev.initialize(this, t);
 	      Logger.Detail(ev.Owner(),"Post",MessagesSimEngine.PostingAt0, ev.ScheduleDate());
-	      timeEvents.put(ev, ev);
+	      timeEvents.add(ev);
 	      if (IsActive() && (engine != null))
 	        engine.OnEventPosted(ev);
 	}
@@ -268,7 +269,7 @@ public abstract class SimObject implements ISimObject{
 	 */
 	public void UnPostAllEvents(){
 		while(timeEvents.size()>0){
-			ISimEvent ev = timeEvents.firstKey();
+			ISimEvent ev = timeEvents.first();
 			UnPost(ev);
 		}
 	}

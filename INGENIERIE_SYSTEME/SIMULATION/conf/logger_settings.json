@@ -8,13 +8,6 @@
     "loggerConfs": [
         {
             "parametres": {
-                "FileName": "BasicMovement.xlsx",
-                "LoggerKind": "enstabretagne.base.logger.loggerimpl.Excel.ExcelDataLogger",
-                "DirectoryName": ".\\log"
-            }
-        },
-        {
-            "parametres": {
                 "LoggerKind": "enstabretagne.base.logger.loggerimpl.stdoutput.SortieTexteLogger"
             }
         }

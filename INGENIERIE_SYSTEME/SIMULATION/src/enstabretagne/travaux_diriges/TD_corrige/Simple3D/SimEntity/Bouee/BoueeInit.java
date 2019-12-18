@@ -1,6 +1,5 @@
 package enstabretagne.travaux_diriges.TD_corrige.Simple3D.SimEntity.Bouee;
 
-import enstabretagne.monitor.interfaces.IMovable;
 import enstabretagne.simulation.components.data.SimInitParameters;
 import javafx.geometry.Point3D;
 import javafx.scene.paint.Color;

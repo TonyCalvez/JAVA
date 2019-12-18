@@ -2,6 +2,6 @@ package enstabretagne.simulation.core;
 
 public interface IScenarioInstance {
 	
-	IScenario getScenarioInstance();
+	IScenario getScenarioInstance(long seed);
 
 }

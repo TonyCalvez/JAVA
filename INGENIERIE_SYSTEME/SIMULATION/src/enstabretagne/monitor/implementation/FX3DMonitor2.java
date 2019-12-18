@@ -311,9 +311,33 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 		;
 
 		buttonBox.getChildren().add(b = new Button("Speed up x5"));
+		b.setOnAction(new EventHandler<ActionEvent>(	) {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				timeSpeedFactor *= 5;
+				updateDelay = RT_updateDelay.mult(timeSpeedFactor);
+				timeSpeedFactorTF.setText(""+timeSpeedFactor);
+				
+			}
+		});
 		buttonBox.getChildren().add(b = new Button("Slow down /5"));
+		b.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				timeSpeedFactor /= 5;
+				if(timeSpeedFactor==0) timeSpeedFactor = 1;
+				updateDelay = RT_updateDelay.mult(timeSpeedFactor);
+				timeSpeedFactorTF.setText(""+timeSpeedFactor);
+				
+			}
+		});
+		
 		timeSpeedFactorTF = new TextField();
 		timeSpeedFactorTF.setMaxWidth(40);
+		timeSpeedFactorTF.setText(""+timeSpeedFactor);
+		timeSpeedFactorTF.setDisable(true);
 		buttonBox.getChildren().add(timeSpeedFactorTF);
 		
 		buttonBox.getChildren().add(b = new Button("AFAP To"));
@@ -778,7 +802,7 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 				Class<?> c = Class.forName(s);
 				if (IScenarioInstance.class.isAssignableFrom(c)) {
 					IScenarioInstance scenI = (IScenarioInstance) c.getConstructor().newInstance();
-					IScenario scen = scenI.getScenarioInstance();
+					IScenario scen = scenI.getScenarioInstance(ScenariiSettings.settings.germeInitial);
 					Logger.Detail(null, "loadExperiencePlanFromSettings", "Scénario trouvé : " + scen.getName());
 					scens.add(scen);
 				} else {

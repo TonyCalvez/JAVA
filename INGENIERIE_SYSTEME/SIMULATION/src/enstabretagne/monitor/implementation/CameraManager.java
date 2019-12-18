@@ -79,7 +79,7 @@ public class CameraManager {
 		ry.setAngle(90);
 		rz.setAngle(-90);
 
-		facteurVitesse = 1;
+		facteurVitesse = 3;
 
 		moveAbsoluteByDirection(cameraPos, directionOfView);
 

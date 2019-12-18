@@ -16,7 +16,7 @@ import enstabretagne.travaux_diriges.TD_corrige.HelloWorld.expertise.Film;
 public class HelloWorldScenarioInstance implements IScenarioInstance {
 
 	@Override
-	public IScenario getScenarioInstance() {
+	public IScenario getScenarioInstance(long seed) {
 		//pour l'exemple on se force ici à mettre un feature à ce niveau.
 		//l'idée est que le scénario aie toujours toutes les données pour créer le scénario.
 		//cette façon de procéder où dès le début on dispose de l'init et du feature est typique de simulations fermées.
