@@ -36,7 +36,7 @@ public class BasicMvtScenario extends SimScenario{
 
 		for(Map.Entry<BoueeFeatures, BoueeInit> e : feature.getBouees().entrySet())
 		{
-			Logger.Detail(this, "afteractivate", "bouee à créer = %s , %s", e.getValue(),e.getKey());
+			Logger.Detail(this, "afteractivate", "bouee ? cr?er = %s , %s", e.getValue(),e.getKey());
 			Post(new BoueeArrival(e.getValue(),e.getKey()));
 		}
 	}
@@ -61,7 +61,7 @@ public class BasicMvtScenario extends SimScenario{
 	
 			@Override
 			public void Process() {
-				Logger.Detail(this, "BoueeArrival.Process", "Création de la baie " + i);
+				Logger.Detail(this, "BoueeArrival.Process", "Cr?ation de la baie " + i);
 				SimEntity b = createChild(Bouee.class, i.getName() , f);
 				b.initialize(getI());
 				b.activate();

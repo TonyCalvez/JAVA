@@ -49,25 +49,25 @@ public class RobotRepresentation3D extends Representation3D{
 		s= new Sphere(robot3D.getSize());
 		s.setMaterial(new PhongMaterial(Color.BLACK));
 		s.setDrawMode(DrawMode.LINE);
-		
+
 		s= new Sphere(robot3D.getSize());
 		s.setMaterial(material);
 		monRobot.getChildren().add(s);
 
-		Sphere sx = new Sphere(robot3D.getSize()/5);
-		sx.setTranslateX(robot3D.getSize());
-		sx.setMaterial(new PhongMaterial(Color.BLUE));
-		Sphere sy = new Sphere(robot3D.getSize()/5);
-		sy.setTranslateY(robot3D.getSize());
-		sy.setMaterial(new PhongMaterial(Color.RED));
-		Sphere sz = new Sphere(robot3D.getSize()/5);
-		sz.setTranslateZ(robot3D.getSize());
-		sz.setMaterial(new PhongMaterial(Color.GREEN));
-		
-		
-		monRobot.getChildren().add(sx);
-		monRobot.getChildren().add(sy);
-		monRobot.getChildren().add(sz);
+//		Sphere sx = new Sphere(robot3D.getSize()/5);
+//		sx.setTranslateX(robot3D.getSize());
+//		sx.setMaterial(new PhongMaterial(Color.BLUE));
+//		Sphere sy = new Sphere(robot3D.getSize()/5);
+//		sy.setTranslateY(robot3D.getSize());
+//		sy.setMaterial(new PhongMaterial(Color.RED));
+//		Sphere sz = new Sphere(robot3D.getSize()/5);
+//		sz.setTranslateZ(robot3D.getSize());
+//		sz.setMaterial(new PhongMaterial(Color.GREEN));
+//
+//
+//		monRobot.getChildren().add(sx);
+//		monRobot.getChildren().add(sy);
+//		monRobot.getChildren().add(sz);
 		
 		
 		world.getChildren().add(monRobot);

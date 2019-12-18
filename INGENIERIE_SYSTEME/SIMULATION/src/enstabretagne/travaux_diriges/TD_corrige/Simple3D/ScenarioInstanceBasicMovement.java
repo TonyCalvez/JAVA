@@ -24,7 +24,7 @@ public class ScenarioInstanceBasicMovement implements IScenarioInstance {
 		BasicMvtScenarioFeatures bsf = new BasicMvtScenarioFeatures("BSF");
 		
 
-		//Création de bouees
+		//Cr?ation de bouees
 		int i=0;
 		MoreRandom mr = new MoreRandom(seed);
 		
