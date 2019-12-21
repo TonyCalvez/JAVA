@@ -66,11 +66,12 @@ public class WallRepresentation3D extends Representation3D{
 		
 		world.getChildren().add(monMur);
 
+		
 	}
 
 	@Override
 	public void update() {
-
+		
 		
 	}
 	
