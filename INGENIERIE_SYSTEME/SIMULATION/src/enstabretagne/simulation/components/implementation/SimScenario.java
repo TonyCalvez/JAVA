@@ -132,7 +132,11 @@ public class SimScenario extends SimEntity implements IScenario,IScenarioIdProvi
 			
 	}
 
-	
+
+	@Override
+	public String canSeeTable() {
+		return null;
+	}
 
 	/* (non-Javadoc)
 	 * @see enstabretagne.simulation.components.implementation.SimEntity#onParentSet()
@@ -155,7 +159,7 @@ public class SimScenario extends SimEntity implements IScenario,IScenarioIdProvi
 	 */
 	@Override
 	public String[] getTitles() {
-		String[] titles={"Nom Scenario","Numéro réplique","Germe"};
+		String[] titles={"Nom Scenario","Numï¿½ro rï¿½plique","Germe"};
 
 		return titles;
 	}

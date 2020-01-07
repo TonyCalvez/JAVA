@@ -14,16 +14,16 @@ public class MovableState implements IMovable {
 
 	/*
 	 * rotationXYZ exprime : 
-	 * - en x, l'angle de rotation en degrès selon l'axe des x
-	 * - en y, l'angle de rotation en degrès selon l'axe des y
-	 * - en z, l'angle de rotation en degrès selon l'axe des z
+	 * - en x, l'angle de rotation en degrï¿½s selon l'axe des x
+	 * - en y, l'angle de rotation en degrï¿½s selon l'axe des y
+	 * - en z, l'angle de rotation en degrï¿½s selon l'axe des z
 	 */
 	Point3D rotationXYZ;
 	/*
 	 * rotationXYZ exprime : 
-	 * - en x, la vitesse de rotation en degrès selon l'axe des x
-	 * - en y, la vitesse de rotation en degrès selon l'axe des y
-	 * - en z, la vitesse de rotation en degrès selon l'axe des z
+	 * - en x, la vitesse de rotation en degrï¿½s selon l'axe des x
+	 * - en y, la vitesse de rotation en degrï¿½s selon l'axe des y
+	 * - en z, la vitesse de rotation en degrï¿½s selon l'axe des z
 	 */
 	Point3D vitesseRotationXYZ;
 	Point3D accelerationRotationXYZ;
@@ -93,5 +93,11 @@ public class MovableState implements IMovable {
 	@Override
 	public Point3D getAccelerationRotationXYZ() {
 		return accelerationRotationXYZ;
+	}
+
+    public Point3D getSpeed() {return vitesse;
+    }
+
+	public Point3D getRotationSpeedXYZ() {return rotationXYZ;
 	}
 }

@@ -13,14 +13,14 @@ import javafx.geometry.Point3D;
 
 
 /*
- * La classe ci dessous constitue l'astuce principale utilisée pour donner 
- * l'illusion du mouvement continue en simulation événementielle.
+ * La classe ci dessous constitue l'astuce principale utilisï¿½e pour donner 
+ * l'illusion du mouvement continue en simulation ï¿½vï¿½nementielle.
  * 
  * On fournit 4 comportements d'extrapolation: les movers
  * - le statique qui se contente d'avoir une position et une orientation
- * - le rectilinéaire qui peut à partir d'une position initiale, d'une vistesse initiale extrapoler une position dans le temps
- * - le circulaire qui peut à partir d'une position initiale, d'une orientation initiale, d'une vitesse de se déplacer selon un cercle dpour atteindre une position
- * - la rotation sur soit qui permet à partir d'une position et d'une orientation initiale, d'atteindre un angle de rotation déterminé 
+ * - le rectilinï¿½aire qui peut ï¿½ partir d'une position initiale, d'une vistesse initiale extrapoler une position dans le temps
+ * - le circulaire qui peut ï¿½ partir d'une position initiale, d'une orientation initiale, d'une vitesse de se dï¿½placer selon un cercle dpour atteindre une position
+ * - la rotation sur soit qui permet ï¿½ partir d'une position et d'une orientation initiale, d'atteindre un angle de rotation dï¿½terminï¿½ 
  */
 @ToRecord(name="MouvementSequenceur")
 public class EntityMouvementSequenceur extends SimEntity implements IMover{
@@ -75,6 +75,11 @@ public class EntityMouvementSequenceur extends SimEntity implements IMover{
 	}
 
 	@Override
+	public String canSeeTable() {
+		return "1";
+	}
+
+	@Override
 	public void onParentSet() {
 		
 	}
@@ -121,6 +126,7 @@ public class EntityMouvementSequenceur extends SimEntity implements IMover{
 	}
 
 
-	
-
+	public void changeSpeed() {
+		//TODO
+	}
 }

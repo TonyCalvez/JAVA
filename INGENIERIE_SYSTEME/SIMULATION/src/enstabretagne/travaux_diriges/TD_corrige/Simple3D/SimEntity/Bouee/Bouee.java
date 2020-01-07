@@ -96,6 +96,11 @@ public class Bouee extends SimEntity implements IMovable, IBoueeRepresentation3D
 
 	}
 
+	@Override
+	public String canSeeTable() {
+		return null;
+	}
+
 
 	@Override
 	protected void initializeSimEntity(SimInitParameters init) {

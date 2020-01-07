@@ -58,7 +58,7 @@ public class RectilinearMover implements IMover{
 
 	public LogicalDuration getDurationToReach() {
 		double d = direction.magnitude();
-		double v = initState.getVitesse().magnitude();
+		double v = initState.getSpeed().magnitude();
 		if(v != 0)
 			return LogicalDuration.ofSeconds(d/v);
 		else
@@ -71,21 +71,21 @@ public class RectilinearMover implements IMover{
 		double dt = d.soustract(initState.getT()).DoubleValue();
 
 			double s=getVitesse(d).magnitude();
-			p= initState.getPosition().add(initState.getVitesse().normalize().multiply(dt*s));
+			p= initState.getPosition().add(initState.getSpeed().normalize().multiply(dt*s));
 
 			return p;
 	}
 
 	public Point3D getVitesse(LogicalDateTime d) {
 		double dt = d.soustract(initState.getT()).DoubleValue();
-		return initState.getVitesse().add(initState.getAcceleration().multiply(dt));
+		return initState.getSpeed().add(initState.getAcceleration().multiply(dt));
 	}
 	public Point3D getAcceleration(LogicalDateTime d) {
 		return initState.getAcceleration();
 	}
 
 	public Point3D getVitesseRotationXYZ(LogicalDateTime currentLogicalDate) {
-		return initState.getVitesseRotationXYZ();
+		return initState.getRotationSpeedXYZ();
 	}
 
 	public Point3D getAccelerationRotationXYZ(LogicalDateTime currentLogicalDate) {

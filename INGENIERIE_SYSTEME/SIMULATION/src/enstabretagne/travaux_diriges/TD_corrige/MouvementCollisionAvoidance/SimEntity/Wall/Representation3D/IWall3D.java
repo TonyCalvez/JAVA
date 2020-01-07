@@ -1,19 +1,17 @@
 package enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import enstabretagne.monitor.interfaces.IMovable;
+import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallFeatures;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point3D;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Cylinder;
-import javafx.scene.transform.Translate;
 
 public interface IWall3D extends IMovable{
 	Color getColor();
-	int getType();
+	WallFeatures.WALL_TYPE getType();
 	
 	double getWidth();
 	double getHeight();

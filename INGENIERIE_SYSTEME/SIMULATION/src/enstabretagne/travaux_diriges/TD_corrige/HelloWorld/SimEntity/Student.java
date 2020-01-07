@@ -33,6 +33,11 @@ public class Student extends SimEntity{
 		
 	}
 
+	@Override
+	public String canSeeTable() {
+		return null;
+	}
+
 	/**
 	 * Gets the nom.
 	 *
@@ -67,10 +72,10 @@ public class Student extends SimEntity{
 	 * @param message the message
 	 */
 	public void talkTo(Student whoIsSpeaking,String message) {
-		double d = RandomGenerator().nextUniform(2, 6);//on répond entre 2 et 6 secondes.
+		double d = RandomGenerator().nextUniform(2, 6);//on rï¿½pond entre 2 et 6 secondes.
 		LogicalDuration ld = LogicalDuration.ofSeconds(d);
 		Post(new RepondreEvent(whoIsSpeaking),ld);
-		Logger.Information(this, "talkTo", whoIsSpeaking.getNom() + " vient de me dire : "+ message+ " et je vais lui répondre dans "+ld);
+		Logger.Information(this, "talkTo", whoIsSpeaking.getNom() + " vient de me dire : "+ message+ " et je vais lui rï¿½pondre dans "+ld);
 	}
 	
 
@@ -88,7 +93,7 @@ public class Student extends SimEntity{
 	 */
 	@Override
 	protected void AfterTerminated(IEntity sender, boolean restart) {
-		Logger.Information(this, "AfterTerminated", this.getName()+" est terminé");
+		Logger.Information(this, "AfterTerminated", this.getName()+" est terminï¿½");
 	}
 	
 	/**
@@ -113,7 +118,7 @@ public class Student extends SimEntity{
 		 */
 		@Override
 		public void Process() {
-			Logger.Information(Owner(), "RepondreEvent.Process", getNom() + " répond à "+destinataire.getNom());
+			Logger.Information(Owner(), "RepondreEvent.Process", getNom() + " rï¿½pond ï¿½ "+destinataire.getNom());
 			destinataire.talkTo((Student) Owner(), ((StudentInit)getInitParameters()).getMessage());
 		}
 		

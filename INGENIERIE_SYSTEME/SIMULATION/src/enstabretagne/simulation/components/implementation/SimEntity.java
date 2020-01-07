@@ -108,10 +108,11 @@ public abstract class SimEntity extends SimObject implements IEntity{
 		OnTerminated.add(this::AfterTerminated);
 		
 	}
-	
 
-	
-	/**
+    public abstract String canSeeTable();
+
+
+    /**
 	 * The Class EntityStatus.
 	 */
 	// / <summary>Entity life cycle status</summary>

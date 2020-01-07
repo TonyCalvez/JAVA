@@ -10,22 +10,15 @@ import enstabretagne.simulation.components.IEntity;
 import enstabretagne.simulation.components.data.SimFeatures;
 import enstabretagne.simulation.components.data.SimInitParameters;
 import enstabretagne.simulation.components.implementation.SimEntity;
-import enstabretagne.simulation.core.ISimObject;
-import enstabretagne.simulation.core.SimObjectRequest;
 import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.Expertise.BorderAndPathGenerator;
 import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D.IWall3D;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point3D;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
-import javafx.scene.shape.Cylinder;
-import javafx.scene.shape.DrawMode;
-import javafx.scene.transform.Rotate;
-import javafx.scene.transform.Scale;
-import javafx.scene.transform.Transform;
 import javafx.scene.transform.Translate;
+import org.jscience.mathematics.vector.Matrix;
 
 public class Wall extends SimEntity implements IMovable,IWall3D{
 
@@ -40,12 +33,17 @@ public class Wall extends SimEntity implements IMovable,IWall3D{
 	}
 
 	@Override
+	public String canSeeTable() {
+		return null;
+	}
+
+	@Override
 	public Color getColor() {
 		return wFeat.getCouleur();
 	}
 
 	@Override
-	public int getType() {
+	public WallFeatures.WALL_TYPE getType() {
 		return wFeat.getType();
 	}
 
@@ -71,6 +69,10 @@ public class Wall extends SimEntity implements IMovable,IWall3D{
 
 	@Override
 	public Point3D getVitesse() {
+		return null;
+	}
+
+	public Point3D getSpeed() {
 		return Point3D.ZERO;
 	}
 
@@ -86,6 +88,10 @@ public class Wall extends SimEntity implements IMovable,IWall3D{
 
 	@Override
 	public Point3D getVitesseRotationXYZ() {
+		return null;
+	}
+
+	public Point3D getRotationSpeedXYZ() {
 		return Point3D.ZERO;
 	}
 
@@ -148,7 +154,7 @@ public class Wall extends SimEntity implements IMovable,IWall3D{
 		return murs;
 	}
 	
-	//Le Bounds en Javafx correspond à la boite englobante du modèle 3D
+	//Le Bounds en Javafx correspond ï¿½ la boite englobante du modï¿½le 3D
 	//C'est ce qu'utilise l'outil d'intersection de JavaFX
 	@Override
 	public List<Bounds> getBounds(double dSecurity){
@@ -166,12 +172,24 @@ public class Wall extends SimEntity implements IMovable,IWall3D{
 		return getBounds(0);
 	}
 
-	//Appel à l'algorithme de génération des murs selon une distance de sécurité autour du mur
-	//correspondant à la largeur du robot afin que le robot ne heurte pas les paroies
+	//Appel ï¿½ l'algorithme de gï¿½nï¿½ration des murs selon une distance de sï¿½curitï¿½ autour du mur
+	//correspondant ï¿½ la largeur du robot afin que le robot ne heurte pas les paroies
 	@Override
 	public List<Node> generateMursWithDistanceOfSecurity(double distanceOfSecurity) {
 		List<Node> ns = new ArrayList<>();
-		((WallInit) getInitParameters()).generateMurs(getWidth(),getHeight(),distanceOfSecurity,ns);
+		if (((WallFeatures) getFeatures()).getType().equals(WallFeatures.WALL_TYPE.FLOOR)){
+			List<Point3D> path = ((WallInit) getInitParameters()).getPath();
+			if (path.size() == 2){
+				WallFeatures feature = (WallFeatures) getFeatures();
+				Box floor = new Box(Math.abs(path.get(1).getX() - path.get(0).getX()), feature.getWidth(), feature.getHeight());
+				floor.setTranslateX(floor.getWidth()/2);
+				floor.setTranslateY(floor.getHeight()/2);
+				ns.add(floor);
+			}
+		}
+		else {
+			((WallInit) getInitParameters()).generateMurs(getWidth(),getHeight(),distanceOfSecurity,ns);
+		}
 		for (Node n : ns) {
 			Translate t = new Translate(getPosition().getX(), getPosition().getY(), getPosition().getZ());
 			
@@ -180,10 +198,10 @@ public class Wall extends SimEntity implements IMovable,IWall3D{
 		return ns;
 	}
 
-	//Génération des murs sans distance de sécurité. C'est le mur qu'on affiche
+	//Gï¿½nï¿½ration des murs sans distance de sï¿½curitï¿½. C'est le mur qu'on affiche
 	public void generateMurs() {
 		murs.clear();
-		murs.addAll(generateMursWithDistanceOfSecurity(0));
+		murs.addAll(generateMursWithDistanceOfSecurity(1));
 	}
 
 

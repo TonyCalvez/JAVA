@@ -26,9 +26,9 @@ public class CircularMover implements IMover{
 	 * LogicalDateTime d: date d'initialisation du mover
 	 * Point3D posInit : position initiale au moment de l'activation du mover
 	 * Point3D cible : cible que le mover doit atteindre par un mouvement circulaire.
-	 * Rq: le diamètre du demi-cercle est fait du segment [posInit;cible]
+	 * Rq: le diamï¿½tre du demi-cercle est fait du segment [posInit;cible]
 	 * 
-	 * Point3D vIni : vecteur vitesse initiale. il déterminera le sens du cercle en fonction de la cible
+	 * Point3D vIni : vecteur vitesse initiale. il dï¿½terminera le sens du cercle en fonction de la cible
 	 */
 	public CircularMover() {
 		
@@ -50,7 +50,7 @@ public class CircularMover implements IMover{
 		vecteurRayon=initState.getPosition().subtract(centre);
 		r=vecteurRayon.magnitude();
 		
-		axeVersAvant = initState.getVitesse(); 
+		axeVersAvant = initState.getSpeed();
 		
 		this.axeRot = axeVersAvant.crossProduct(targetDir);
 		if(axeRot.equals(Point3D.ZERO))
@@ -65,7 +65,7 @@ public class CircularMover implements IMover{
 		rotVit = new Rotate();
 		rotVit.setAxis(axeRot);
 
-		vRot = initState.getVitesse().magnitude()/r*180/Math.PI;
+		vRot = initState.getSpeed().magnitude()/r*180/Math.PI;
 		
 	}
 
@@ -83,12 +83,12 @@ public class CircularMover implements IMover{
 		double dt = d.soustract(initState.getT()).DoubleValue();
 		Point3D v;
 		rotVit.setAngle(vRot*dt);
-		v= rotVit.transform(initState.getVitesse());
+		v= rotVit.transform(initState.getSpeed());
 				
 		return v;
 	}
 	public Point3D getAcceleration(LogicalDateTime d) {
-		return axeVersAvant.crossProduct(axeRot).multiply(initState.getVitesse().magnitude()*initState.getVitesse().magnitude()/r);
+		return axeVersAvant.crossProduct(axeRot).multiply(initState.getSpeed().magnitude()*initState.getSpeed().magnitude()/r);
 	}
 	
 	
@@ -110,7 +110,7 @@ public class CircularMover implements IMover{
 	}
 
 	public Point3D getVitesseRotationXYZ(LogicalDateTime d) {
-		return initState.getVitesseRotationXYZ();
+		return initState.getRotationSpeedXYZ();
 
 
 	}
@@ -120,7 +120,7 @@ public class CircularMover implements IMover{
 
 	@Override
 	public LogicalDuration getDurationToReach() {
-		double v = initState.getVitesse().magnitude();
+		double v = initState.getSpeed().magnitude();
 		if(v!=0) {
 			double dt = vecteurRayon.magnitude()*Math.PI/v;
 			return LogicalDuration.ofSeconds(dt);

@@ -4,20 +4,38 @@ import enstabretagne.simulation.components.data.SimFeatures;
 import javafx.scene.paint.Color;
 
 public class WallFeatures extends SimFeatures{
-	public WallFeatures(String id,Color couleur, int type, double width, double height) {
-		super(id);
-		this.couleur = couleur;
-		this.type = type;
-		this.width = width;
-		this.height = height;	
+	public enum WALL_TYPE{
+		OUTSIDE_WALL,
+		INSIDE_WALL,
+		FURNITURE,
+		FLOOR;
 	}
-	
-	private Color couleur;
-	private int type;
+
+	private Color color;
+	private WALL_TYPE type;
 	private double width;
 	private double height;
 
-	
+	public WallFeatures(String id, WALL_TYPE type, double width, double height) {
+		super(id);
+		this.width = width;
+		this.height = height;
+		this.type = type;
+		switch (this.type){
+			case OUTSIDE_WALL:
+				this.color = Color.DARKGREY;
+				break;
+			case FLOOR:
+				this.color = Color.LIGHTGREY;
+				break;
+			case INSIDE_WALL:
+				this.color = Color.GREEN;
+				break;
+			case FURNITURE:
+				this.color = Color.ORANGE;
+				break;
+		}
+	}
 
 	public double getWidth() {
 		return width;
@@ -28,10 +46,10 @@ public class WallFeatures extends SimFeatures{
 	}
 
 	public Color getCouleur() {
-		return couleur;
+		return color;
 	}
 	
-	public int getType()
+	public WALL_TYPE getType()
 	{
 		return type;
 	}
