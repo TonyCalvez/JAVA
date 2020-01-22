@@ -1,0 +1,397 @@
+@startuml
+
+title __MESSAGES's Class Diagram__\n
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesDictionnary {
+          {static} + NewClassObjectAdded : String
+          {static} + NewObjectAdded : String
+          {static} + ObjectTypeNotReferenced : String
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesEntity {
+          {static} + ActivateWhenNotIDLE : String
+          {static} + DeactivateWhenNotAlive : String
+          {static} + InitializeWhenNotBORN : String
+          {static} + InstanceCreationError : String
+          {static} + TerminateWhenNotBorn : String
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesLogger {
+          {static} + ExcelLoggerDirNotFound : String
+          {static} + ExcelLoggerFileNotFound : String
+          {static} + ExcelLoggerRecordStartTimeNotFound : String
+          {static} + LoggerDataIncorrectMethod : String
+          {static} + LoggerDataReuseOfAToRecordName : String
+          {static} + LoggerImpossible : String
+          {static} + LoggerKindNotFound : String
+          {static} + LoggerKindNotProvided : String
+          {static} + LoggerParsingFailed : String
+          {static} + LoggerSettingsDirNotFound : String
+          {static} + LoggerSettingsFileNotFound : String
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesLogicalTimeDuration {
+          {static} + DoubleValueTooHigh : String
+          {static} + LogicalDateIsNotDefined : String
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesSimEngine {
+          {static} + ActiveChildren0Parts1 : String
+          {static} + ActualClientType0MismatchWithClientInterfaceType1 : String
+          {static} + ActualInitiatorType0MismatchWithInitiatorInterfaceType1 : String
+          {static} + ActualPendingEventsCount0 : String
+          {static} + After0 : String
+          {static} + AgentFromAgent0 : String
+          {static} + AgentTnoTable : String
+          {static} + AllocatedMemoryByte0 : String
+          {static} + AlreadyAttachedToOwner1 : String
+          {static} + AlreadyAttachedToParent0 : String
+          {static} + AlreadyDetachedNotOwnedBy0 : String
+          {static} + AlreadyDetachedNotParentedBy0 : String
+          {static} + AlreadyDettached : String
+          {static} + AlreadyInUseBy0 : String
+          {static} + ApplicationAssembly : String
+          {static} + ApplicationScenario : String
+          {static} + At0 : String
+          {static} + At0WhileEngineWas1 : String
+          {static} + AttachChild : String
+          {static} + AttachTo : String
+          {static} + Attached : String
+          {static} + AttachedToOwner1 : String
+          {static} + AttachedToParent1 : String
+          {static} + AttemptToAttachNonSimTeam0ToSimApp1 : String
+          {static} + AttemptToAttachSimApp0ToSimTeam1 : String
+          {static} + AttemptToAttachSimAppOrSimTeam0ToRegularAgent1 : String
+          {static} + AttemptToCreateAnSimAppChild0WithTno1 : String
+          {static} + AttemptToCreateChild0WithUndefinedTno : String
+          {static} + AttemptToCreatePart0WithUndefinedTno : String
+          {static} + AttemptToReleaseFacet0ThatIsNotInUse : String
+          {static} + AttemptToReleaseFacet0ThatIsUsedByAnotherBehavior1 : String
+          {static} + AttemptToSetIsWeakPropertyAt0OnATimeEventPostedAt1WithInitRank2 : String
+          {static} + AttemptToSetName0OnActiveObject : String
+          {static} + AttemptingToHaveARecursiveCallToDeferredIntegration : String
+          {static} + AttemptsToInitializeATimeEventPostedAt1WithInitRank2 : String
+          {static} + Automatic : String
+          {static} + BADPARENT0DueToTeamRule : String
+          {static} + BaseClass : String
+          {static} + BundleSizeAverageEventsPerBundle0 : String
+          {static} + CannotAddSubBehaviorsToThisBehavior : String
+          {static} + CannotBeComparedToASimTimeEvent : String
+          {static} + CannotOpenObservationOutput0 : String
+          {static} + ChildType0MismatchExpectedType1 : String
+          {static} + CleaningUpReplica0 : String
+          {static} + ClientEntityClasses : String
+          {static} + ClientGenericParameter0IsNotAnInterface : String
+          {static} + Command : String
+          {static} + ComparisonNotPossible : String
+          {static} + Composition : String
+          {static} + Config : String
+          {static} + ConfigurationDefaultSynchroOrder0 : String
+          {static} + ConfigurationIsEngineIntegrityChecked0 : String
+          {static} + ConfigurationRandomGenerator0Shared1RootSeed2 : String
+          {static} + ConfigurationSpaceReferenceFrame0 : String
+          {static} + ConfigurationTimeImplementation0 : String
+          {static} + ConfigurationUsePortableRandomGenerator0 : String
+          {static} + Console : String
+          {static} + Continuous : String
+          {static} + ContinuousMetrics : String
+          {static} + Cooperation : String
+          {static} + Cooperation0 : String
+          {static} + Cooperation0AlreadyDefined1 : String
+          {static} + CooperationTable : String
+          {static} + CreateGenerator0Seed1BurnCount2 : String
+          {static} + CreatedObjects0Remain1 : String
+          {static} + Creating : String
+          {static} + CurrentReplica0 : String
+          {static} + DefaultConstructorNotFoundForApp : String
+          {static} + Defering : String
+          {static} + Defined : String
+          {static} + DefinedAs0 : String
+          {static} + Defining : String
+          {static} + Deleting : String
+          {static} + DerivedClasses : String
+          {static} + DeserializationFailed : String
+          {static} + DetachChild : String
+          {static} + DetachFrom : String
+          {static} + Detaching : String
+          {static} + Dictionary : String
+          {static} + DisplayAgentTnoTable : String
+          {static} + DisplayApplicationConfiguration : String
+          {static} + DisplayApplicationInformation : String
+          {static} + DisplayCooperationTable : String
+          {static} + DisplayCurrentAgentJournal : String
+          {static} + DisplayCurrentEntityInit : String
+          {static} + DisplayCurrentEntityJournal : String
+          {static} + DisplayCurrentEntityTechnology : String
+          {static} + DisplayEngineMetrics : String
+          {static} + DisplayEntityInstanceTree : String
+          {static} + DisplayEntityTables : String
+          {static} + DisplayEntityTypeComposition : String
+          {static} + DisplayEntityTypeCompositionHierachy : String
+          {static} + DisplayEntityTypeDictionary : String
+          {static} + DisplayEntityTypeInheritance : String
+          {static} + DisplayEntityTypeInheritanceHierachy : String
+          {static} + DisplayFieldsOfEntity0 : String
+          {static} + DisplayGlobalJournal : String
+          {static} + DisplayGlobalJournalForSeverity0AndService1 : String
+          {static} + DisplayInitOfEntity0 : String
+          {static} + DisplayInitialisationTree : String
+          {static} + DisplayInstanceTree : String
+          {static} + DisplayJournalOfAgent0 : String
+          {static} + DisplayJournalOfEntity0 : String
+          {static} + DisplayPendingTimeEventsAt : String
+          {static} + DisplayPropagationTable : String
+          {static} + DisplayScenario : String
+          {static} + DisplayTechnologiesTable : String
+          {static} + DisplayTechnologyOfEntity0 : String
+          {static} + DisplayTimeEventTable : String
+          {static} + ERROR : String
+          {static} + EngineMetrics : String
+          {static} + Entity : String
+          {static} + Entity0MustImplement1IRequired : String
+          {static} + EntityInstanceTree : String
+          {static} + EntityTypeCompositionHierachy : String
+          {static} + EntityTypeDictionary : String
+          {static} + EntityTypeInheritanceHierachy : String
+          {static} + EnumActiveSiblingServersActualClientType0MismatchWithClientInterfaceType1 : String
+          {static} + EnumActiveSiblingServersClientEntity0IsNotActive : String
+          {static} + EnumActiveSiblingServersSourceEntity0IsNotActive : String
+          {static} + ErrorStackTace : String
+          {static} + ErrorWhenConfiguringTimeAndSpaceInAssembly0 : String
+          {static} + Events : String
+          {static} + ExceptionStackTace : String
+          {static} + Execute : String
+          {static} + ExecuteApplication : String
+          {static} + ExecuteAutomaticReplicaCount0ReplicaDuration100 : String
+          {static} + ExecuteReplica0UpTo1 : String
+          {static} + ExecuteReplicaAutomaticly : String
+          {static} + ExecuteUpToADate : String
+          {static} + FieldsOfEntity0 : String
+          {static} + File0DoesNotExist : String
+          {static} + Filter : String
+          {static} + Finalize : String
+          {static} + FinalizeCurrentReplica : String
+          {static} + FinalizeReplica0 : String
+          {static} + FinalizeReplica_0 : String
+          {static} + FinalizedReplica0 : String
+          {static} + Finalizing : String
+          {static} + From : String
+          {static} + From0To1 : String
+          {static} + FromChild0 : String
+          {static} + FromParent0 : String
+          {static} + FullName0ServerInterface1From2ClientInterface3From4 : String
+          {static} + GlobalJournal : String
+          {static} + HasBadOwner1 : String
+          {static} + History : String
+          {static} + Id0 : String
+          {static} + InService0Activity1Sender2Says3 : String
+          {static} + Info : String
+          {static} + InfoMessage : String
+          {static} + Inheritance : String
+          {static} + Init : String
+          {static} + InitOfEntity0 : String
+          {static} + Initialize : String
+          {static} + InitializeChild : String
+          {static} + InitializeNextReplica : String
+          {static} + InitializeReplica0 : String
+          {static} + InitializeReplica_0 : String
+          {static} + InitializedReplica0 : String
+          {static} + InitiatorEntityClasses : String
+          {static} + InitiatorGenericParameter0IsNotAnInterface : String
+          {static} + Instance : String
+          {static} + InstanceCreationOfChild0FailedWithTno1 : String
+          {static} + InstanceCreationOfPart0FailedWithTno1 : String
+          {static} + Interrupt : String
+          {static} + InterruptReason0 : String
+          {static} + Journal : String
+          {static} + JournalOfAgent0 : String
+          {static} + JournalOfEntity0 : String
+          {static} + Kind : String
+          {static} + LocalDateShouldNotBeUsefullOutsideOfDeferredIntegration : String
+          {static} + LogicalTimeElapsedS0 : String
+          {static} + Manage : String
+          {static} + ManageEntityInstance : String
+          {static} + MemoryBeforeGC0AfterGC1 : String
+          {static} + Metrics : String
+          {static} + MismatchWithTno1TnoWhileAttemptingToCreateChild2 : String
+          {static} + MismatchWithTno1TnoWhileAttemptingToCreatePart2 : String
+          {static} + MustBeALIVEWhereas0 : String
+          {static} + MustBeActiveWhereas0 : String
+          {static} + MustBeBORNWhile0 : String
+          {static} + MustBePausableWhereas0 : String
+          {static} + Naming : String
+          {static} + NewChild : String
+          {static} + NoConditions : String
+          {static} + NoCurrentAgentSelected : String
+          {static} + NoCurrentEntitySelected : String
+          {static} + NoSimulationApplicationFoundInAssembly0 : String
+          {static} + NoSuchAssemblyFoundAt0 : String
+          {static} + NonAtomicTransitionDetectedFromCaller0 : String
+          {static} + None : String
+          {static} + NotAChildOfParent : String
+          {static} + NotImplementedYet : String
+          {static} + NotOrthogonalTo0InUseBy1 : String
+          {static} + NotifyDeparent : String
+          {static} + NotifyReparent : String
+          {static} + ObservationRecordUnknownException0 : String
+          {static} + OpeningObservationOutput : String
+          {static} + Operation0RequiresREADPermissionAvailableWhereas1 : String
+          {static} + Operation0RequiresWRITEPermissionAvailableWhile1 : String
+          {static} + OperationOnlyAllowedForReamOrToplevelAgentParent0 : String
+          {static} + OriginalFullNameAlreadyRemoved : String
+          {static} + OriginalNameAlreadyExistForEntityType0 : String
+          {static} + Parallel : String
+          {static} + ParentAgent0MustImplement1IRequired : String
+          {static} + PartnerEntityClasses : String
+          {static} + PartnerGenericParameter0IsNotAnInterface : String
+          {static} + Paused : String
+          {static} + Paused0RTimeLTime2Ratio3 : String
+          {static} + PausedAt1RTLT2 : String
+          {static} + Pausing : String
+          {static} + PendingEvents0ContinuousDim1 : String
+          {static} + PendingTimeEventsAt0 : String
+          {static} + PilotableFacets : String
+          {static} + PostInitialize : String
+          {static} + PostingAt0 : String
+          {static} + Press0ForAListOfAvailableCommandsPress2ForMoreInfo : String
+          {static} + PressAnyKeyToContinue : String
+          {static} + PressReturnKeyToContinue : String
+          {static} + ProcessedBundleRateBundlesS0 : String
+          {static} + ProcessedEventBundleCount0 : String
+          {static} + ProcessedEventCount0 : String
+          {static} + ProcessedEventRateEventsS0 : String
+          {static} + ProcessedWeakEventRatio0 : String
+          {static} + Processing : String
+          {static} + Propagation : String
+          {static} + Propagation0 : String
+          {static} + Propagation0AlreadyDefined1 : String
+          {static} + PropagationTable : String
+          {static} + RTime0LTime1Ratio2 : String
+          {static} + ReScheduledAtNowFrom0 : String
+          {static} + RealTimeElapsedS0 : String
+          {static} + RealToLogicalTimeRatioReal0 : String
+          {static} + Reason0 : String
+          {static} + RegisteredAmong0Tnos : String
+          {static} + RegisteredOnEngine0 : String
+          {static} + Registering01 : String
+          {static} + ReleaseFacetUse : String
+          {static} + Reparent : String
+          {static} + Reparented : String
+          {static} + Reparenting : String
+          {static} + ReplicaCount : String
+          {static} + ReplicaDuration : String
+          {static} + RequestExclusiveFacetUseFacet01 : String
+          {static} + RessourcesMetrics : String
+          {static} + RestartApplication : String
+          {static} + Root : String
+          {static} + RootMenu : String
+          {static} + Scenario : String
+          {static} + ScenarioNotSet : String
+          {static} + Select : String
+          {static} + SelectCurrentEntityInstance : String
+          {static} + SelectedEntityNoMoreExists : String
+          {static} + SelectedEntityNotActuallyAlive : String
+          {static} + SeletedSenderId0HostedByAgentId1 : String
+          {static} + SerializationFailed : String
+          {static} + ServerEntityClasses : String
+          {static} + ServerGenericParameter0IsNotAnInterface : String
+          {static} + Service : String
+          {static} + SetFilterThreshold : String
+          {static} + SetLocalOrderTo0 : String
+          {static} + SetStepTo0 : String
+          {static} + Severity : String
+          {static} + Start0 : String
+          {static} + Stop0 : String
+          {static} + StoppedAt01 : String
+          {static} + SwitchedFrom0 : String
+          {static} + SynchronizedContinuousTimeRatio0000 : String
+          {static} + SynchronizedContinuousVariablesCount0 : String
+          {static} + SynchronizedContinuousVariablesScalarFields0 : String
+          {static} + SynchronizedIntegrationStepAvrageBetweenBundles0 : String
+          {static} + SynchronizedIntegrationStepRangeAverageS0 : String
+          {static} + SynchronizedIntegrationStepRateStepS0 : String
+          {static} + Synchronizing : String
+          {static} + Technology : String
+          {static} + TechnoloyOfEntity0 : String
+          {static} + TimeEventsMetrics : String
+          {static} + TimeSlice : String
+          {static} + Tno0AlreadyRegistered : String
+          {static} + To : String
+          {static} + ToChild0 : String
+          {static} + ToParent0 : String
+          {static} + TryToSetName0OnAnAliveOrRecycledEntity : String
+          {static} + TryToSetTno0OnAnAliveOrRecycledEntity : String
+          {static} + TypeMustInheritFromSimEntity : String
+          {static} + UnDefering : String
+          {static} + UnDefined : String
+          {static} + UnHandledException0WhileAdoptedBy1 : String
+          {static} + UnHandledException0WhileReparentingTo1 : String
+          {static} + UnSynchronizing : String
+          {static} + UndefinedOwner : String
+          {static} + UndefinedParent : String
+          {static} + UndefinedTnoWhileAttemptingToCreateChild1 : String
+          {static} + UndefinedTnoWhileAttemptingToCreatePart1 : String
+          {static} + UnhandledException0 : String
+          {static} + UnhandledException0WhenGetingSummary : String
+          {static} + UnhandledException0WhileCreatingEntity1 : String
+          {static} + UnhandledException0WhileDrawingAgent1 : String
+          {static} + UnhandledException0WhileDrawingPart1 : String
+          {static} + UnhandledException0WhileDrawingPerceptions : String
+          {static} + UnhandledException0WhileInitializing : String
+          {static} + UnnamedUnregistered : String
+          {static} + UnpostingWhileScheduledAt0 : String
+          {static} + UptoDate : String
+          {static} + UsedClasses : String
+          {static} + UserClasses : String
+          {static} + View : String
+          {static} + WARNING : String
+          {static} + WarningBehavior0TerminatedMoreThanOnce : String
+          {static} + WithTno0 : String
+          {static} + ZombiCallbackFromClass0 : String
+          {static} + ZombiContinuousFrom0 : String
+          {static} + ZombiCooperationAttachementWhenFinalizing : String
+          {static} + ZombiEventFrom0 : String
+          {static} + ZombiEventsWhenFinalizing : String
+          {static} + ZombiLazyContinuousFrom0 : String
+          {static} + ZombiLazyContinuousWhenFinalizing : String
+          {static} + ZombiObjectFrom0 : String
+          {static} + ZombiObjectsWhenFinalizing : String
+          {static} + ZombiPropagationAttachementWhenFinalizing : String
+          {static} + ZombiSynchroContinuousWhenFinalizing : String
+      }
+    }
+  }
+  
+
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

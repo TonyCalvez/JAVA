@@ -1,0 +1,220 @@
+@startuml
+
+title __IMPLEMENTATION's Class Diagram__\n
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.EndSimulationEvent {
+          + Process()
+          + resetProcessDate()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.SimEngine {
+          {static} + FinalDate : LogicalDateTime
+          {static} + InitialDate : LogicalDateTime
+          {static} - AllowRead : EngineActivity
+          {static} - AllowReadWrite : EngineActivity
+          {static} - Running : EngineActivity
+          {static} - Starting : EngineActivity
+          {static} - Stopping : EngineActivity
+          - allTimeEvents : SortedList<ISimEvent>
+          - appType : Class<? extends ISimObject>
+          - burnCount : int
+          - elapsedRealTime : Duration
+          - eventCount : int
+          - initialCreatedObjectCount : int
+          - initialDeletedObjectCount : int
+          - initialMemoryLevel : int
+          - isGeneratorShared : boolean
+          - isIntegrityChecked : boolean
+          - lastStartDate : Temporal
+          - onBeforeTimeEventProcessedListeners : List<NotifySimEvent>
+          - onDateChanged : List<SimEngineEvent>
+          - onDateChangedListeners : List<NotifyLogicalDateChange>
+          - onSimEngineEventProcessed : List<NotifySimEngineEvent>
+          - onStatusChangedListeners : List<NotifyLogicalDateChange>
+          - onTimeEventProcessed : List<NotifySimTimeEvent>
+          - stepCount : int
+          - useBinaryTreeForEventList : boolean
+          - usePortableRandomGenerator : boolean
+          + Activity()
+          + AddSimObjectAddedListener()
+          + AddSimObjectRemovedListener()
+          + IsInitialized()
+          + IsRunning()
+          + OnEventPosted()
+          + OnEventUnPosted()
+          + OnSimObjectAdded()
+          + OnSimObjectRemoved()
+          + RemoveSimObjectAddedListener()
+          + RemoveSimObjectRemovedListener()
+          + SimEngine()
+          + SimulationDate()
+          + ToString()
+          + WriteObjectTypeDictionary()
+          + WriteTimeEventList()
+          + activateSimulation()
+          + deactivateSimulation()
+          + getRandomGenerator()
+          + getScenarioId()
+          + init()
+          + interrupt()
+          + requestAllSimObject()
+          + requestSimObject()
+          + simulate()
+          + terminate()
+          # setActivity()
+          ~ checkReadAllowed()
+          ~ checkWriteAllowed()
+          ~ isReadAllowed()
+          ~ isWriteAllowed()
+          - AllocatedMemory()
+          - CleanUp()
+          - ElapsedRealTime()
+          - ElapsedTime()
+          - EventCount()
+          - EventRate()
+          - FindNextTimeEvent()
+          - GetSimObjectType()
+          - LastInterruptReason()
+          - ObjectDictionary()
+          - OnDateChanged()
+          - PendingEventsCount()
+          - RetreiveSimObject()
+          - RootOfDerivedObjectTypeHierarchy()
+          - RootOfUsedObjectTypeHierarchy()
+          - ShouldInterrupt()
+          - eventListFinalize()
+          - getCurrentScenario()
+          - processEventsUntilCurrentDate()
+          - processNextTimeEventsPacket()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      abstract class enstabretagne.simulation.core.implementation.SimEvent {
+          # initRank : int
+          {static} - initCounter : int
+          + Owner()
+          + ScheduleDate()
+          + SimEvent()
+          + TimeEventLine()
+          + compareTo()
+          + initialize()
+          + resetProcessDate()
+          + terminate()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      abstract class enstabretagne.simulation.core.implementation.SimObject {
+          ~ isLocal : boolean
+          ~ simObjectActivationChangedListeners : List<SimObjectActivationChangedEventHandler>
+          {static} - ObjID : int
+          {static} - deletedObjectCount : int
+          - name : String
+          - simObjID : int
+          - timeEvents : SortedList<ISimEvent>
+          {static} + CreatedObjectCount()
+          + CurrentDate()
+          {static} + DeletedObjectCount()
+          {abstract} + IsActive()
+          + Post()
+          + Post()
+          + Post()
+          + UnPost()
+          + UnPostAllEvents()
+          + getEngine()
+          + getName()
+          + getSimObjID()
+          + interruptEngineByDate()
+          + setEngine()
+          + terminate()
+          + toString()
+          # SimObject()
+          # activate()
+          # deactivate()
+          # finalize()
+          # getCurrentLogicalDate()
+          # reinitSimObject()
+          # setName()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.SimObjectDictionary {
+          ~ objectTypesDictionnary : HashMap<Class<?>, ISimObjectType>
+          ~ simObjectAddedListener : List<SimObjectAddedListener>
+          ~ simObjectRemovedListener : List<SimObjectRemovedListener>
+          + Add()
+          + AddSimObjectAddedListener()
+          + AddSimObjectRemovedListener()
+          + Remove()
+          + RemoveSimObjectAddedListener()
+          + RemoveSimObjectRemovedListener()
+          + RetreiveSimObject()
+          + WriteObjectTypeDictionary()
+          + getKnownSimObjects()
+          + getSimObjectTypeFrom()
+          + initialize()
+          + requestSimObject()
+          + terminate()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.SimObjectType {
+          ~ c : Class<? extends ISimObject>
+          ~ objectInstances : List<ISimObject>
+          + SimObjectType()
+          + getObjectInstances()
+          + terminate()
+      }
+    }
+  }
+  
+
+  enstabretagne.simulation.core.implementation.EndSimulationEvent -up-|> enstabretagne.simulation.core.implementation.SimEvent
+  enstabretagne.simulation.core.implementation.SimEngine .up.|> enstabretagne.simulation.core.ISimEngine
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.EngineActivity : activity
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.IScenario : currentScenario
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.base.math.MoreRandom : generator
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.EngineInterruptReason : interrupter
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.ISimObjectDictionary : objectDictionary
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.base.time.LogicalDateTime : simulationDate
+  enstabretagne.simulation.core.implementation.SimEvent .up.|> enstabretagne.simulation.core.ISimEvent
+  enstabretagne.simulation.core.implementation.SimEvent o-- enstabretagne.simulation.core.ISimObject : owner
+  enstabretagne.simulation.core.implementation.SimEvent o-- enstabretagne.base.time.LogicalDateTime : postDate
+  enstabretagne.simulation.core.implementation.SimEvent o-- enstabretagne.base.time.LogicalDateTime : scheduleDate
+  enstabretagne.simulation.core.implementation.SimObject .up.|> enstabretagne.simulation.core.ISimObject
+  enstabretagne.simulation.core.implementation.SimObject o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.simulation.core.implementation.SimObjectDictionary .up.|> enstabretagne.simulation.core.ISimObjectDictionary
+  enstabretagne.simulation.core.implementation.SimObjectDictionary o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.simulation.core.implementation.SimObjectType .up.|> enstabretagne.simulation.core.ISimObjectType
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

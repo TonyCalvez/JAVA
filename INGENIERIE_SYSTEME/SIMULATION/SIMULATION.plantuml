@@ -1,0 +1,1105 @@
+@startuml
+
+title __SIMULATION's Class Diagram__\n
+
+  namespace de.vogella.algorithms.dijkstra.engine {
+    class de.vogella.algorithms.dijkstra.engine.DijkstraAlgorithm {
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.model {
+    class de.vogella.algorithms.dijkstra.model.Edge {
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.model {
+    class de.vogella.algorithms.dijkstra.model.Graph {
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.model {
+    interface de.vogella.algorithms.dijkstra.model.IEdge {
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.model {
+    interface de.vogella.algorithms.dijkstra.model.IVertex {
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.model {
+    class de.vogella.algorithms.dijkstra.model.Vertex {
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.model {
+    namespace jfxmodel {
+      class de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DEdge {
+      }
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.model {
+    namespace jfxmodel {
+      class de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DVertex {
+      }
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.test {
+    class de.vogella.algorithms.dijkstra.test.TestDijkstraAlgorithm_BasicTest {
+    }
+  }
+  
+
+  namespace de.vogella.algorithms.dijkstra.test {
+    class de.vogella.algorithms.dijkstra.test.TestDijkstraAlgorithm_Point3D {
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    class enstabretagne.base.Settings {
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      class enstabretagne.base.logger.CategoriesGenerator {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      interface enstabretagne.base.logger.ILogger {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      interface enstabretagne.base.logger.IRecordable {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      enum LogLevels {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      class enstabretagne.base.logger.Logger {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      enum LoggerParamsNames {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      class enstabretagne.base.logger.LoggerSettings {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      interface enstabretagne.base.logger.ToRecord {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      namespace loggerimpl {
+        abstract class enstabretagne.base.logger.loggerimpl.AbstractLogger {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      namespace loggerimpl {
+        class enstabretagne.base.logger.loggerimpl.LoggerConf {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      namespace loggerimpl {
+        class enstabretagne.base.logger.loggerimpl.ObjectAnalyseForLog {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      namespace loggerimpl {
+        class enstabretagne.base.logger.loggerimpl.TypeAnalyseForLog {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      namespace loggerimpl {
+        namespace csv {
+          class enstabretagne.base.logger.loggerimpl.csv.CSVDataLogger {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace logger {
+      namespace loggerimpl {
+        namespace stdoutput {
+          class enstabretagne.base.logger.loggerimpl.stdoutput.SortieTexteLogger {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace math {
+      class enstabretagne.base.math.Diagonal3DMatrix {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace math {
+      class enstabretagne.base.math.MoreRandom {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace math {
+      class enstabretagne.base.math.PortableRandom {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace math {
+      class enstabretagne.base.math.Randomizer {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesDictionnary {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesEntity {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesLogger {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesLogicalTimeDuration {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace messages {
+      class enstabretagne.base.messages.MessagesSimEngine {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace time {
+      class enstabretagne.base.time.LogicalDateTime {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace time {
+      class enstabretagne.base.time.LogicalDuration {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.base {
+    namespace time {
+      enum TimeUnits {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    interface enstabretagne.monitor.Contrat3D {
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    interface enstabretagne.monitor.IDrawAction {
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    interface enstabretagne.monitor.IExperiencePlan {
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    interface enstabretagne.monitor.IMonitor {
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    class enstabretagne.monitor.Monitor3DMessages {
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    class enstabretagne.monitor.Monitor3DSettings {
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    class enstabretagne.monitor.ObjTo3DMappingSettings {
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      abstract class enstabretagne.monitor.implementation.AbstractMonitor {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.CameraManager {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.ExperiencePlan {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.FX3DMonitor2 {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.MovableState {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      abstract class enstabretagne.monitor.implementation.Representation3D {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.UniversalMonitor {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.XYZRotator2 {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace interfaces {
+      interface enstabretagne.monitor.interfaces.IMovable {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    interface enstabretagne.simulation.components.IEntity {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    interface enstabretagne.simulation.components.IScenarioIdProvider {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    interface enstabretagne.simulation.components.ISimEntity {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    class enstabretagne.simulation.components.ScenarioId {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace data {
+      abstract class enstabretagne.simulation.components.data.SimFeatures {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace data {
+      abstract class enstabretagne.simulation.components.data.SimInitParameters {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace data {
+      class enstabretagne.simulation.components.data.SimScenarioInit {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace implementation {
+      class enstabretagne.simulation.components.implementation.ScenariiSettings {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace implementation {
+      abstract class enstabretagne.simulation.components.implementation.SimEntity {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace implementation {
+      class enstabretagne.simulation.components.implementation.SimScenario {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace messages {
+      class enstabretagne.simulation.components.messages.ScenariiMessages {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace notifications {
+      interface enstabretagne.simulation.components.notifications.ActivationNotification {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace notifications {
+      interface enstabretagne.simulation.components.notifications.CreationNotification {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace notifications {
+      interface enstabretagne.simulation.components.notifications.DeactivationNotification {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace notifications {
+      interface enstabretagne.simulation.components.notifications.InitializationNotification {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.components {
+    namespace notifications {
+      interface enstabretagne.simulation.components.notifications.TerminatingNotification {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    class enstabretagne.simulation.core.EngineActivity {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    enum EngineInterruptReason {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.IEngine {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.IScenario {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.IScenarioInstance {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.ISimEngine {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.ISimEvent {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.ISimObject {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.ISimObjectDictionary {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.ISimObjectType {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.ISimTimeEvent {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.ISimulationDateProvider {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    interface enstabretagne.simulation.core.SimObjectRequest {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    class enstabretagne.simulation.core.SortedList {
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.EndSimulationEvent {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.SimEngine {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      abstract class enstabretagne.simulation.core.implementation.SimEvent {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      abstract class enstabretagne.simulation.core.implementation.SimObject {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.SimObjectDictionary {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace implementation {
+      class enstabretagne.simulation.core.implementation.SimObjectType {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.NotifyLogicalDateChange {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.NotifySimEngineEvent {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.NotifySimEvent {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.NotifySimTimeEvent {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.SimEngineEvent {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.SimObjectActivationChangedEventHandler {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.SimObjectAddedListener {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.simulation.core {
+    namespace notifications {
+      interface enstabretagne.simulation.core.notifications.SimObjectRemovedListener {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework {
+    abstract class enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.EntiteSimulee {
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework {
+    abstract class enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimEvent {
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework {
+    class enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimuEngine {
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace Expertise {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.Expertise.BorderAndPathGenerator {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.Main {
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.ScenarioInstance_BE {
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Robot {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.DiscoveredMap {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Robot {
+      interface enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Robot {
+      namespace Representation3D {
+        interface enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Representation3D.IRobot3D {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Robot {
+      namespace Representation3D {
+        class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Representation3D.RobotRepresentation3D {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Robot {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Robot {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotFeatures {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Robot {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotInit {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Wall {
+      namespace Representation3D {
+        interface enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D.IWall3D {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Wall {
+      namespace Representation3D {
+        class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D.WallRepresentation3D {
+        }
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Wall {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Wall {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Wall {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallFeatures {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.Wall {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallInit {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace scenarios {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.scenarios.ScenMvtCollisionAvoidance {
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace scenarios {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.scenarios.ScenMvtCollisionAvoidanceFeatures {
+      }
+    }
+  }
+  
+
+  de.vogella.algorithms.dijkstra.model.Edge .up.|> de.vogella.algorithms.dijkstra.model.IEdge
+  de.vogella.algorithms.dijkstra.model.Edge o-- de.vogella.algorithms.dijkstra.model.IVertex : destination
+  de.vogella.algorithms.dijkstra.model.Edge o-- de.vogella.algorithms.dijkstra.model.IVertex : source
+  de.vogella.algorithms.dijkstra.model.Vertex .up.|> de.vogella.algorithms.dijkstra.model.IVertex
+  de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DEdge .up.|> de.vogella.algorithms.dijkstra.model.IEdge
+  de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DEdge o-- de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DVertex : source
+  de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DEdge o-- de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DVertex : target
+  de.vogella.algorithms.dijkstra.model.jfxmodel.Point3DVertex .up.|> de.vogella.algorithms.dijkstra.model.IVertex
+  enstabretagne.base.logger.CategoriesGenerator o-- enstabretagne.base.logger.CategoriesGenerator.Segment : defaultSegment
+  enstabretagne.base.logger.Logger o-- enstabretagne.simulation.core.ISimulationDateProvider : simulationDateProvider
+  enstabretagne.base.logger.loggerimpl.AbstractLogger .up.|> enstabretagne.base.logger.ILogger
+  enstabretagne.base.logger.loggerimpl.ObjectAnalyseForLog .up.|> enstabretagne.base.logger.IRecordable
+  enstabretagne.base.logger.loggerimpl.ObjectAnalyseForLog o-- enstabretagne.base.logger.loggerimpl.TypeAnalyseForLog : to
+  enstabretagne.base.logger.loggerimpl.csv.CSVDataLogger -up-|> enstabretagne.base.logger.loggerimpl.AbstractLogger
+  enstabretagne.base.logger.loggerimpl.csv.CSVDataLogger o-- enstabretagne.base.time.LogicalDateTime : startRecordTime
+  enstabretagne.base.logger.loggerimpl.stdoutput.SortieTexteLogger -up-|> enstabretagne.base.logger.loggerimpl.AbstractLogger
+  enstabretagne.base.logger.loggerimpl.stdoutput.SortieTexteLogger o-- enstabretagne.base.time.LogicalDateTime : startRecordTime
+  enstabretagne.base.math.MoreRandom -up-|> java.util.Random
+  enstabretagne.base.math.PortableRandom -up-|> java.util.Random
+  enstabretagne.base.time.LogicalDateTime .up.|> java.lang.Comparable
+  enstabretagne.base.time.LogicalDuration .up.|> java.lang.Comparable
+  enstabretagne.monitor.implementation.AbstractMonitor .up.|> enstabretagne.monitor.IMonitor
+  enstabretagne.monitor.implementation.AbstractMonitor o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.monitor.implementation.AbstractMonitor o-- enstabretagne.simulation.components.implementation.SimScenario : currentScenario
+  enstabretagne.monitor.implementation.AbstractMonitor o-- enstabretagne.monitor.implementation.ExperiencePlan : xpPlan
+  enstabretagne.monitor.implementation.ExperiencePlan .up.|> enstabretagne.monitor.IExperiencePlan
+  enstabretagne.monitor.implementation.FX3DMonitor2 .up.|> enstabretagne.monitor.IMonitor
+  enstabretagne.monitor.implementation.FX3DMonitor2 -up-|> javafx.application.Application
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.monitor.implementation.CameraManager : camManager
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.monitor.interfaces.IMovable : toFollow
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.base.time.LogicalDuration : RT_updateDelay
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.simulation.components.implementation.SimScenario : currentScenario
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.base.time.LogicalDuration : updateDelay
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.monitor.implementation.ExperiencePlan : xpPlan
+  enstabretagne.monitor.implementation.MovableState .up.|> enstabretagne.monitor.interfaces.IMovable
+  enstabretagne.monitor.implementation.MovableState o-- enstabretagne.base.time.LogicalDateTime : t
+  enstabretagne.monitor.implementation.Representation3D .up.|> enstabretagne.monitor.IDrawAction
+  enstabretagne.monitor.implementation.Representation3D o-- enstabretagne.monitor.ObjTo3DMappingSettings : general3DSettings
+  enstabretagne.monitor.implementation.UniversalMonitor .up.|> enstabretagne.monitor.IMonitor
+  enstabretagne.monitor.implementation.UniversalMonitor -up-|> enstabretagne.monitor.implementation.AbstractMonitor
+  enstabretagne.simulation.components.data.SimScenarioInit -up-|> enstabretagne.simulation.components.data.SimInitParameters
+  enstabretagne.simulation.components.implementation.SimEntity .up.|> enstabretagne.simulation.components.IEntity
+  enstabretagne.simulation.components.implementation.SimEntity -up-|> enstabretagne.simulation.core.implementation.SimObject
+  enstabretagne.simulation.components.implementation.SimEntity o-- enstabretagne.simulation.components.data.SimFeatures : features
+  enstabretagne.simulation.components.implementation.SimEntity o-- enstabretagne.simulation.components.data.SimInitParameters : initParameters
+  enstabretagne.simulation.components.implementation.SimEntity o-- enstabretagne.simulation.components.IEntity : parent
+  enstabretagne.simulation.components.implementation.SimEntity o-- enstabretagne.simulation.components.implementation.SimEntity.EntityTransition : currentTransition
+  enstabretagne.simulation.components.implementation.SimEntity o-- enstabretagne.simulation.components.implementation.SimEntity.EntityStatus : status
+  enstabretagne.simulation.components.implementation.SimScenario .up.|> enstabretagne.base.logger.IRecordable
+  enstabretagne.simulation.components.implementation.SimScenario .up.|> enstabretagne.simulation.components.IScenarioIdProvider
+  enstabretagne.simulation.components.implementation.SimScenario .up.|> enstabretagne.simulation.core.IScenario
+  enstabretagne.simulation.components.implementation.SimScenario -up-|> enstabretagne.simulation.components.implementation.SimEntity
+  enstabretagne.simulation.components.implementation.SimScenario o-- enstabretagne.base.time.LogicalDateTime : endDateTime
+  enstabretagne.simulation.components.implementation.SimScenario o-- enstabretagne.simulation.components.implementation.SimEntity : entityToFollow
+  enstabretagne.simulation.components.implementation.SimScenario o-- enstabretagne.base.time.LogicalDateTime : startDateTime
+  enstabretagne.simulation.components.implementation.SimScenario o-- enstabretagne.simulation.components.ScenarioId : scenarioId
+  enstabretagne.simulation.core.SortedList .up.|> java.lang.Iterable
+  enstabretagne.simulation.core.implementation.EndSimulationEvent -up-|> enstabretagne.simulation.core.implementation.SimEvent
+  enstabretagne.simulation.core.implementation.SimEngine .up.|> enstabretagne.simulation.core.ISimEngine
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.EngineActivity : activity
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.IScenario : currentScenario
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.base.math.MoreRandom : generator
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.EngineInterruptReason : interrupter
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.simulation.core.ISimObjectDictionary : objectDictionary
+  enstabretagne.simulation.core.implementation.SimEngine o-- enstabretagne.base.time.LogicalDateTime : simulationDate
+  enstabretagne.simulation.core.implementation.SimEvent .up.|> enstabretagne.simulation.core.ISimEvent
+  enstabretagne.simulation.core.implementation.SimEvent o-- enstabretagne.simulation.core.ISimObject : owner
+  enstabretagne.simulation.core.implementation.SimEvent o-- enstabretagne.base.time.LogicalDateTime : postDate
+  enstabretagne.simulation.core.implementation.SimEvent o-- enstabretagne.base.time.LogicalDateTime : scheduleDate
+  enstabretagne.simulation.core.implementation.SimObject .up.|> enstabretagne.simulation.core.ISimObject
+  enstabretagne.simulation.core.implementation.SimObject o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.simulation.core.implementation.SimObjectDictionary .up.|> enstabretagne.simulation.core.ISimObjectDictionary
+  enstabretagne.simulation.core.implementation.SimObjectDictionary o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.simulation.core.implementation.SimObjectType .up.|> enstabretagne.simulation.core.ISimObjectType
+  enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.EntiteSimulee o-- enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimuEngine : engine
+  enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimEvent .up.|> java.lang.Comparable
+  enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimEvent o-- enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.EntiteSimulee : entitePorteuseEvenement
+  enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimEvent o-- enstabretagne.base.time.LogicalDateTime : d
+  enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimuEngine o-- enstabretagne.base.time.LogicalDateTime : currentDate
+  enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimuEngine o-- enstabretagne.base.time.LogicalDateTime : end
+  enstabretagne.travaux_diriges.TD_corrige.EngineSimple.Framework.SimuEngine o-- enstabretagne.base.time.LogicalDateTime : start
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.ScenarioInstance_BE .up.|> enstabretagne.simulation.core.IScenarioInstance
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.ScenarioInstance_BE o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.scenarios.ScenMvtCollisionAvoidanceFeatures : mcaf
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur -up-|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature : emsf
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit : emsi
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover o-- enstabretagne.monitor.implementation.MovableState : initState
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur -up-|> enstabretagne.simulation.components.implementation.SimEntity
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover : circulrMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit : ini
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover : mv
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover : rectilinearMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator : selfRotator
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover : staticMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature -up-|> enstabretagne.simulation.components.data.SimFeatures
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit -up-|> enstabretagne.simulation.components.data.SimInitParameters
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit o-- enstabretagne.monitor.interfaces.IMovable : etatInitial
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur -up-|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature : emsf
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit : emsi
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover o-- enstabretagne.monitor.implementation.MovableState : initState
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator o-- enstabretagne.monitor.implementation.MovableState : initState
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover o-- enstabretagne.monitor.implementation.MovableState : initState
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.DiscoveredMap o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot : robot
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Representation3D.RobotRepresentation3D -up-|> enstabretagne.monitor.implementation.Representation3D
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Representation3D.RobotRepresentation3D o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Representation3D.IRobot3D : robot3D
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot .up.|> enstabretagne.monitor.interfaces.IMovable
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Representation3D.IRobot3D
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot -up-|> enstabretagne.simulation.components.implementation.SimEntity
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.DiscoveredMap : map
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotFeatures : rFeat
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotInit : rIni
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Representation3D.RobotRepresentation3D : rep3D
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.Robot o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur : rmv
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotFeatures -up-|> enstabretagne.simulation.components.data.SimFeatures
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotFeatures o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature : emsf
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotFeatures o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotFeatures.ROBOT_TYPE : type
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotInit -up-|> enstabretagne.simulation.components.data.SimInitParameters
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.RobotInit o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit : mvtSeqIni
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D.WallRepresentation3D -up-|> enstabretagne.monitor.implementation.Representation3D
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D.WallRepresentation3D o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D.IWall3D : wall3D
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Wall .up.|> enstabretagne.monitor.interfaces.IMovable
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Wall .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Representation3D.IWall3D
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Wall -up-|> enstabretagne.simulation.components.implementation.SimEntity
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Wall o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallFeatures : wFeat
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.Wall o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallInit : wIni
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallFeatures -up-|> enstabretagne.simulation.components.data.SimFeatures
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallFeatures o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallFeatures.WALL_TYPE : type
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallInit -up-|> enstabretagne.simulation.components.data.SimInitParameters
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.scenarios.ScenMvtCollisionAvoidance -up-|> enstabretagne.simulation.components.implementation.SimScenario
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.scenarios.ScenMvtCollisionAvoidanceFeatures -up-|> enstabretagne.simulation.components.data.SimFeatures
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
