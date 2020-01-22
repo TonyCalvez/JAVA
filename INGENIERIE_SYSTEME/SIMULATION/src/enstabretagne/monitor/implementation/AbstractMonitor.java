@@ -48,16 +48,7 @@ public abstract class AbstractMonitor implements IMonitor {
 	/** The current replique number. */
 	protected long currentRepliqueNumber;
 
-	/**
-	 * Gets the current replique number.
-	 *
-	 * @return the current replique number
-	 */
-	public long getCurrentRepliqueNumber() {
-		return currentRepliqueNumber;
-	}
-
-	/**
+    /**
 	 * Gets the current seed.
 	 *
 	 * @return the current seed
@@ -87,16 +78,7 @@ public abstract class AbstractMonitor implements IMonitor {
 		return currentScenario;
 	}
 
-	/**
-	 * Gets the engine.
-	 *
-	 * @return the engine
-	 */
-	public ISimEngine getEngine() {
-		return engine;
-	}
-
-	/**
+    /**
 	 * Instantiates a new abstract monitor.
 	 */
 	public AbstractMonitor() {

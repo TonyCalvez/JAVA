@@ -12,20 +12,8 @@ import java.util.List;
  * The Class CategoriesGenerator.
  */
 public class CategoriesGenerator {
-	
-	/** The borne basse. */
-	double borneBasse;
-	
-	/** The borne haute. */
-	double borneHaute;
-	
-	/** The nb categories. */
-	int nbCategories;
-	
-	/** The arrondi. */
-	int arrondi;
-	
-	/** The segments. */
+
+    /** The segments. */
 	List<Segment> segments;
 	
 	/**
@@ -68,17 +56,7 @@ public class CategoriesGenerator {
 			return (i<high & i>=low);
 		}
 
-		/**
-		 * Checks if is in.
-		 *
-		 * @param i the i
-		 * @return true, if is in
-		 */
-		public boolean isIn(int i){
-			return (i<high & i>=low);			
-		}
-		
-		/**
+        /**
 		 * Gets the moy.
 		 *
 		 * @return the moy
@@ -119,33 +97,7 @@ public class CategoriesGenerator {
 			return index_s+" "+moyBound+" ["+lowBound+";"+maxBound+"[";
 		}
 
-		/**
-		 * Gets the low.
-		 *
-		 * @return the low
-		 */
-		public double getLow() {
-			return low;
-		}
-
-		/**
-		 * Gets the high.
-		 *
-		 * @return the high
-		 */
-		public double getHigh() {
-			return high;
-		}
-
-		/**
-		 * Gets the index.
-		 *
-		 * @return the index
-		 */
-		public int getIndex() {
-			return index;
-		}
-}
+    }
 	
 
 
@@ -157,18 +109,9 @@ public class CategoriesGenerator {
 	
 	/** The default segment. */
 	Segment defaultSegment;
-	
-	
-	/**
-	 * Gets the default segment.
-	 *
-	 * @return the default segment
-	 */
-	public Segment getDefaultSegment() {
-		return defaultSegment;
-	}
 
-	/**
+
+    /**
 	 * Instantiates a new categories generator.
 	 *
 	 * @param borneBasse the borne basse
@@ -179,11 +122,8 @@ public class CategoriesGenerator {
 	 */
 	public CategoriesGenerator(double borneBasse, double borneHaute, int nbCategories,int minimumintegerDigit,int minimumFractionDigit) {
 		super();
-		this.borneBasse = borneBasse;
-		this.borneHaute = borneHaute;
-		this.arrondi=minimumFractionDigit;
-		
-		index_df = new DecimalFormat();
+
+        index_df = new DecimalFormat();
 		index_df.setMaximumFractionDigits(0);
 		index_df.setMinimumFractionDigits(0);
 		index_df.setMinimumIntegerDigits(minimumintegerDigit);
@@ -195,9 +135,7 @@ public class CategoriesGenerator {
 		if(nbCategories<0)
 			nbCategories = - nbCategories;
 
-		this.nbCategories = nbCategories;
-		
-		segments = new ArrayList<>();
+        segments = new ArrayList<>();
 		
 		segments.add(new Segment(0,Double.MIN_VALUE, borneBasse));
 		double d = (borneHaute - borneBasse) / nbCategories;

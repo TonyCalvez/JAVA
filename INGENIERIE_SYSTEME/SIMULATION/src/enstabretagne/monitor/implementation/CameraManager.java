@@ -30,11 +30,7 @@ public class CameraManager {
 	 */
 	final Group cameraGroup = new Group();
 
-	public Group getCameraGroup() {
-		return cameraGroup;
-	}
-
-	/**
+    /**
 	 * Value of the near clip of the camera
 	 */
 	private static final double CAMERA_NEAR_CLIP = 0.1;
@@ -75,7 +71,7 @@ public class CameraManager {
 			rz.setAxis(Rotate.Z_AXIS);
 		}
 
-		//fondamental ci-dessous: réorienter la caméra qui par défaut est orientée vers le haut selon l'axe z et l'axe des x et y ne sont pas non plus bien orientés 
+		//fondamental ci-dessous: rï¿½orienter la camï¿½ra qui par dï¿½faut est orientï¿½e vers le haut selon l'axe z et l'axe des x et y ne sont pas non plus bien orientï¿½s 
 		ry.setAngle(90);
 		rz.setAngle(-90);
 
@@ -101,7 +97,7 @@ public class CameraManager {
 
 	void moveAbsoluteByRotation(Point3D cameraPos, Point3D angleOfView) {
 
-		// mise à jour de l'état de positionnement camera
+		// mise ï¿½ jour de l'ï¿½tat de positionnement camera
 		axyz = angleOfView;
 		pointVue = cameraPos;
 		dir = XYZRotator2.getDirectionFromAngle(axyz);
