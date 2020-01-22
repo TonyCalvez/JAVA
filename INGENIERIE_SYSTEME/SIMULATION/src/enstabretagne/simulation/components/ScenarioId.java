@@ -44,17 +44,11 @@ public class ScenarioId {
 	public String getScenarioId() {
 		return scenarioId;
 	}
-	
-	/**
-	 * Sets the scenario id.
-	 *
-	 * @param scenarioId the new scenario id
-	 */
+
 	public void setScenarioId(String scenarioId) {
 		this.scenarioId = scenarioId;
 	}
-	
-	/**
+    /**
 	 * Gets the replique number.
 	 *
 	 * @return the replique number

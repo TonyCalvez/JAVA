@@ -11,7 +11,7 @@ import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimE
 public class ScenMvtCollisionAvoidanceFeatures  extends SimFeatures{
 
 	private HashMap<RobotInit, RobotFeatures> robots;
-	
+
 	public HashMap<RobotInit, RobotFeatures>  getRobots() {
 		return robots;
 	}
@@ -19,11 +19,11 @@ public class ScenMvtCollisionAvoidanceFeatures  extends SimFeatures{
 	public HashMap<WallInit, WallFeatures> getWalls() {
 		return walls;
 	}
-	
+
 	public ScenMvtCollisionAvoidanceFeatures(String id) {
 		super(id);
 		robots = new HashMap<>();
 		walls = new HashMap<>();
-	}	
+	}
 
 }

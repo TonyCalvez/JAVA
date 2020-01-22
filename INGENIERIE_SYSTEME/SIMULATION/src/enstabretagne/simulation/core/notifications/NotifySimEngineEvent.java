@@ -13,12 +13,6 @@ import enstabretagne.simulation.core.ISimTimeEvent;
  */
 @FunctionalInterface
 public interface NotifySimEngineEvent {
-	
-	/**
-	 * Notify sim engine event.
-	 *
-	 * @param ev the ev
-	 */
-	void notifySimEngineEvent(ISimTimeEvent ev);
+    void notifySimEngineEvent(ISimTimeEvent ev);
 }
 
