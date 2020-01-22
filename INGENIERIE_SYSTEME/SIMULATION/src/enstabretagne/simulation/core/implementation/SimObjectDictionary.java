@@ -5,7 +5,6 @@
 */
 package enstabretagne.simulation.core.implementation;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -189,7 +188,7 @@ public class SimObjectDictionary implements ISimObjectDictionary{
 	/* (non-Javadoc)
 	 * @see enstabretagne.simulation.core.ISimObjectDictionary#WriteObjectTypeDictionary(java.io.PrintWriter)
 	 */
-	public void WriteObjectTypeDictionary(PrintWriter out) {
+	public void WriteObjectTypeDictionary() {
 		
 		
 	}

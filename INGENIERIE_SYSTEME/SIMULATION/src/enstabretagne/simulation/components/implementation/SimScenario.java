@@ -108,7 +108,7 @@ public class SimScenario extends SimEntity implements IScenario,IScenarioIdProvi
 	 *
 	 * @param date the date
 	 */
-	public void InterruptAt(LogicalDateTime date){
+    private void InterruptAt(LogicalDateTime date){
 		Post(new EndSimulationEvent(),date);
 	}
 

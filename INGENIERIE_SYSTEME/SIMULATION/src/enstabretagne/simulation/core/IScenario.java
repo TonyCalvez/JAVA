@@ -58,21 +58,6 @@ public interface IScenario extends ISimEntity{
 	 * @see enstabretagne.simulation.core.ISimObject#terminate(boolean)
 	 */
 	void terminate(boolean restart);
-	
-	/**
-	 * Cette fonction est essentielle pour le moniteur de simulation temps réel.
-	 * Elle permet de jalonner les pauses du moteur au rythme du temps réel jusqu'à l'événement de fin terminal
-	 *
-	 * @param duration the duration
-	 */
-	void InterruptIn(LogicalDuration duration);
-	
-	/**
-	 * Cette fonction est essentielle pour poster les arrêts du moteur à la fin du scénario.
-	 *
-	 * @param date the date
-	 */
-	void InterruptAt(LogicalDateTime date);
-	
+
 }
 

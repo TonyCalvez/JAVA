@@ -10,11 +10,5 @@ import enstabretagne.base.time.LogicalDateTime;
  * The Interface ISimTimeEvent.
  */
 public interface ISimTimeEvent extends ISimEvent{
-	
-	/**
-	 * Gets the process date.
-	 *
-	 * @return the process date
-	 */
-    LogicalDateTime getProcessDate();
+
 }

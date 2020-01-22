@@ -180,7 +180,7 @@ public class SimEngine implements ISimEngine{
         	onTimeEventProcessed= new ArrayList<NotifySimTimeEvent>();
         	objectDictionary.initialize(this);
         
-        	//TODO vérifier ces deux trucs ci dessous
+        	//TODO vï¿½rifier ces deux trucs ci dessous
             // Initialise fields
 //            this.appType = appType;
 //		    this.appName = appName;
@@ -217,7 +217,7 @@ public class SimEngine implements ISimEngine{
 
             // initialize randomfactory
             this.generator = new MoreRandom((int) getCurrentScenario().getSeed());
-            Logger.Information(getCurrentScenario(),"SimEngine - Generator", "Générateur créé avec la graine "+((int) getCurrentScenario().getSeed()));
+            Logger.Information(getCurrentScenario(),"SimEngine - Generator", "Gï¿½nï¿½rateur crï¿½ï¿½ avec la graine "+((int) getCurrentScenario().getSeed()));
 
 
             OnDateChanged(); // $CS Notify date change due to date (re)initialization
@@ -837,7 +837,7 @@ public class SimEngine implements ISimEngine{
         /// </summary>
         public void WriteObjectTypeDictionary(PrintWriter Out)
         {
-            objectDictionary.WriteObjectTypeDictionary(Out);
+            objectDictionary.WriteObjectTypeDictionary();
         }
 
 

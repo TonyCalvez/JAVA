@@ -3,7 +3,6 @@
  */
 package enstabretagne.simulation.core;
 
-import java.io.PrintWriter;
 import java.util.List;
 
 import enstabretagne.simulation.core.notifications.SimObjectAddedListener;
@@ -99,9 +98,8 @@ public interface ISimObjectDictionary {
 	/**
 	 * Write object type dictionary.
 	 *
-	 * @param out the out
-	 */
-	void WriteObjectTypeDictionary(PrintWriter out);
+     */
+	void WriteObjectTypeDictionary();
 	
 	/**
 	 * Retreive sim object.
