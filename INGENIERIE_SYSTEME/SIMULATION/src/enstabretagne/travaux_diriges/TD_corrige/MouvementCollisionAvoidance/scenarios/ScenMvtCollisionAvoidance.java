@@ -38,18 +38,18 @@ public class ScenMvtCollisionAvoidance extends SimScenario{
 		
 		
 		//Important: ordre d'initialisation. Initialiser d'abord l'environnement 
-		//car sa complexité peut nécessiter des traitements préalables à l'initialisation
-		//Par exemple: génération d'un pathfinding
+		//car sa complexitï¿½ peut nï¿½cessiter des traitements prï¿½alables ï¿½ l'initialisation
+		//Par exemple: gï¿½nï¿½ration d'un pathfinding
 		Logger.Detail(this, "afteractivate", "taille liste bouees = %s", feature.getRobots().size());
 		for(Entry<WallInit, WallFeatures> e : feature.getWalls().entrySet())
 		{
-			Logger.Detail(this, "afteractivate", "bouee à créer = %s , %s", e.getValue(),e.getKey());
+			Logger.Detail(this, "afteractivate", "bouee ï¿½ crï¿½er = %s , %s", e.getValue(),e.getKey());
 			Post(new WallArrival(e.getKey(),e.getValue()));
 		}
 
 		for(Map.Entry<RobotInit,RobotFeatures > e : feature.getRobots().entrySet())
 		{
-			Logger.Detail(this, "afteractivate", "bouee à créer = %s , %s", e.getValue(),e.getKey());
+			Logger.Detail(this, "afteractivate", "bouee ï¿½ crï¿½er = %s , %s", e.getValue(),e.getKey());
 			Post(new RobotInitialize(e.getKey(),e.getValue()));
 		}
 

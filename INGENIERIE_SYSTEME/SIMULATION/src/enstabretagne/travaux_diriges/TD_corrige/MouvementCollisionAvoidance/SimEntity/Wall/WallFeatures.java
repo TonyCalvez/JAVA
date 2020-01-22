@@ -7,7 +7,8 @@ public class WallFeatures extends SimFeatures{
 	public enum WALL_TYPE{
 		OUTSIDE_WALL,
 		INSIDE_WALL,
-		FURNITURE,
+		CHAIR,
+		TABLE,
 		FLOOR;
 	}
 
@@ -31,8 +32,11 @@ public class WallFeatures extends SimFeatures{
 			case INSIDE_WALL:
 				this.color = Color.GREEN;
 				break;
-			case FURNITURE:
+			case CHAIR:
 				this.color = Color.ORANGE;
+				break;
+			case TABLE:
+				this.color = Color.BLUE;
 				break;
 		}
 	}

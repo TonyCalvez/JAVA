@@ -10,8 +10,6 @@ import enstabretagne.simulation.components.IEntity;
 import enstabretagne.simulation.components.data.SimFeatures;
 import enstabretagne.simulation.components.data.SimInitParameters;
 import enstabretagne.simulation.components.implementation.SimEntity;
-import enstabretagne.simulation.core.ISimEvent;
-import enstabretagne.simulation.core.ISimObject;
 import enstabretagne.simulation.core.implementation.SimEvent;
 import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.Expertise.BorderAndPathGenerator;
 import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur;
@@ -24,7 +22,6 @@ import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimE
 import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Wall.WallFeatures;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point3D;
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Cylinder;
@@ -114,14 +111,14 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 	@Override
 	public String canSeeTable() {
 		return null;
-	}
+	}  // need to be effective
 
 	@Override
 	protected void initializeSimEntity(SimInitParameters init) {
 		rIni = (RobotInit) getInitParameters();
 		this.setInitialState();
 		this.initFirstMouvementSequenceur();
-		Logger.Information(this,"initializeSimEntity", String.format("Robot %s is initialized with %s type. Bad= %b", getName(),getType().toString(),isBad()));
+		Logger.Information(this,"initializeSimEntity", String.format("The Robot %s has been initialized with the %s type. Bad= %b", getName(),getType().toString(),isBad()));
 	}
 
 	private void initFirstMouvementSequenceur() {
@@ -175,7 +172,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 	public void resolveSimpleHit(){
 		boolean before = isDamaged();
 		switch (this.getType()){
-			case RECON:
+			case RECONNAISSANCE:
 				this.healthPoint -= 50;
 				break;
 			case ASSAULT:
@@ -195,7 +192,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 	public void resolveCriticalHit(){
 		boolean before = isDamaged();
 		switch (this.getType()){
-			case RECON:
+			case RECONNAISSANCE:
 				this.healthPoint -= 80;
 				break;
 			case ASSAULT:
@@ -245,7 +242,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 
 	public double getRange() {
 		switch (getType()){
-			case RECON:
+			case RECONNAISSANCE:
 				return 15;
 			case ASSAULT:
 				return 7.5;
@@ -353,7 +350,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 
 	private double getIdentificationRange() {
 		switch (getType()){
-			case RECON:
+			case RECONNAISSANCE:
 				return 10;
 			case ASSAULT:
 				return 5;
@@ -367,7 +364,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 
 	public List<Bounds> generateBoundsForObstacles(){
 		List<Wall> walls = (List<Wall>) (List<?>) getEngine()
-				.requestSimObject(simo -> (simo instanceof Wall) && (((Wall) simo).getType().equals(WallFeatures.WALL_TYPE.INSIDE_WALL) || ((Wall) simo).getType().equals(WallFeatures.WALL_TYPE.OUTSIDE_WALL) || ((Wall) simo).getType().equals(WallFeatures.WALL_TYPE.FURNITURE)));
+				.requestSimObject(simo -> (simo instanceof Wall) && (((Wall) simo).getType().equals(WallFeatures.WALL_TYPE.INSIDE_WALL) || ((Wall) simo).getType().equals(WallFeatures.WALL_TYPE.OUTSIDE_WALL) || ((Wall) simo).getType().equals(WallFeatures.WALL_TYPE.CHAIR)));
 		List<Bounds> bounds = new ArrayList();
 		for (Wall w : walls) {
 			bounds.addAll(w.getBounds());
@@ -390,7 +387,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 
 	public double getNominalSpeed(){
 		switch (getType()) {
-			case RECON:
+			case RECONNAISSANCE:
 				if (isDamaged()) {
 					return 2.5;
 				} else {
@@ -409,7 +406,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 
 	public double getNominalRotationSpeed(){
 		switch (getType()) {
-			case RECON:
+			case RECONNAISSANCE:
 				if (isDamaged()) {
 					return 50;
 				} else {

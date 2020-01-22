@@ -1,13 +1,11 @@
 package enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot;
 
-import java.util.List;
-
 import enstabretagne.simulation.components.data.SimFeatures;
 import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature;
 
 public class RobotFeatures extends SimFeatures{
 	public enum ROBOT_TYPE {
-		RECON,
+		RECONNAISSANCE,
 		ASSAULT;
 	}
 
@@ -36,7 +34,7 @@ public class RobotFeatures extends SimFeatures{
 		this.taille = 2;
 		this.type = type;
 		switch (type){
-			case RECON:
+			case RECONNAISSANCE:
 				this.vitesseMax = 5;
 				this.rotationSpeedMax = 100;
 				break;

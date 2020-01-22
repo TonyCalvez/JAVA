@@ -27,9 +27,9 @@ public class ScenarioInstance_BE implements IScenarioInstance {
 		this.mcaf = new ScenMvtCollisionAvoidanceFeatures("RbScen1");
 		// Construction de l'environnement
 		this.buildRoom(seed);
-		// Cr�ation du robot gentil
+		// Creation du robot gentil
 		this.buildNiceRobot();
-		// Cr�ation du robot m�chant
+		// Creation du robot mechant
 		this.buildBadRobot();
 
 		// Initialisation du temps
@@ -41,10 +41,61 @@ public class ScenarioInstance_BE implements IScenarioInstance {
 	}
 
 	/**
-	 * Construit la portion de mur derrière laquelle se cache le robot ennemi.
+	 * Construction du robot Recon initial.
+	 */
+	private void buildNiceRobot(){
+		RobotFeatures rf = new RobotFeatures("RF", RobotFeatures.ROBOT_TYPE.RECONNAISSANCE);
+		RobotInit ri = new RobotInit("RI", Color.BLUE, new Point3D(4, 30, 0), new Point3D(0, 0, -90), false,
+				new Point3D(48, 28, 0));
+		mcaf.getRobots().put(ri, rf);
+	}
+
+	/**
+	 * Construction du robot ennemi.
+	 */
+	private void buildBadRobot(){
+		RobotFeatures rfbad = new RobotFeatures("RF", RobotFeatures.ROBOT_TYPE.ASSAULT);
+
+		RobotInit rb = new RobotInit("BadGuy", Color.RED, new Point3D(39.5, 17.5, 1), new Point3D(0, 0, 0),
+				true, Point3D.ZERO);
+		mcaf.getRobots().put(rb, rfbad);
+	}
+
+	/**
+	 * Construction des trois meubles (table + chaises)à une position aléatoire. Il est possible que cette position aléatoire soit superposé avec un objet existant.
+	 * @param seed Graine utilisé pour initialiser le randomiseur de type {@link MoreRandom}.
+	 */
+	private void buildFurniture(long seed){
+		WallFeatures wtargetF;
+		WallFeatures wtargetC;
+		WallInit wtargetI;
+		List<Point3D> lT;
+		String[] names = new String[] {"Chaise1", "Chaise2"};
+		MoreRandom randomizer = new MoreRandom(seed);
+		for (int i=0;i<2;i++){
+			double x = randomizer.nextUniform(5,45);
+			double y = randomizer.nextUniform(5,25);
+
+			wtargetF = new WallFeatures("RF", WallFeatures.WALL_TYPE.CHAIR, 1.5, 0.5);
+			lT = new ArrayList<>();
+			lT.add(new Point3D(0, 0, 0));
+			wtargetI = new WallInit(names[i], new Point3D(x + 2, y + 2, 0), Point3D.ZERO, lT);
+			mcaf.getWalls().put(wtargetI, wtargetF);
+		}
+
+		double x = randomizer.nextUniform(5,45);
+		double y = randomizer.nextUniform(5,25);
+		wtargetC = new WallFeatures("RF", WallFeatures.WALL_TYPE.TABLE, 1.5, 0.5);
+		lT = new ArrayList<>();
+		lT.add(new Point3D(0, 0, 0));
+		wtargetI = new WallInit("Table", new Point3D(x + 2, y + 2, 0), Point3D.ZERO, lT);
+		mcaf.getWalls().put(wtargetI, wtargetC);
+	}
+
+	/**
+	 * Construction de la portion de mur derrière laquelle se cache le robot ennemi.
 	 */
 	private void buildSquareWall(){
-		//Niche
 		List<Point3D> lP;
 		WallFeatures wf = new WallFeatures("RF", WallFeatures.WALL_TYPE.INSIDE_WALL, 0.2, 2.5);
 		WallInit wi;
@@ -58,25 +109,7 @@ public class ScenarioInstance_BE implements IScenarioInstance {
 	}
 
 	/**
-	 * Construit les murs extérieurs
-	 */
-	private void buildExtWall(){
-		//Murs exterieurs
-		List<Point3D> lPext;
-		WallFeatures wfext = new WallFeatures("RF", WallFeatures.WALL_TYPE.OUTSIDE_WALL, 0.2, 2.5);
-		WallInit wiext;
-		lPext = new ArrayList<>();
-		lPext.add(new Point3D(0, 0, 0));
-		lPext.add(new Point3D(50, 0, 0));
-		lPext.add(new Point3D(50, 30, 0));
-		lPext.add(new Point3D(0, 30, 0));
-		lPext.add(new Point3D(0, 0, 0));
-		wiext = new WallInit("Outside Walls", new Point3D(2, 2, 0), Point3D.ZERO, lPext);
-		mcaf.getWalls().put(wiext, wfext);
-	}
-
-	/**
-	 * Construit la portion de mur en escalier.
+	 * Construction des mur en escalier.
 	 */
 	private void buildZigZag(){
 		//Zigzag
@@ -95,50 +128,25 @@ public class ScenarioInstance_BE implements IScenarioInstance {
 	}
 
 	/**
-	 * Construit trois meubles à une position aléatoire. Il est possible que cette position aléatoire soit superposé avec un objet existant.
-	 * @param seed Graine utilisé pour initialiser le randomiseur de type {@link MoreRandom}.
+	 * Construction des murs extérieurs
 	 */
-	private void buildFurniture(long seed){
-		WallFeatures wtargetF;
-		WallInit wtargetI;
-		List<Point3D> lT;
-		String[] names = new String[] {"Table", "Chaise1", "Chaise2"};
-		MoreRandom randomizer = new MoreRandom(seed);
-		for (int i=0;i<3;i++){
-			double x = randomizer.nextUniform(5,45);
-			double y = randomizer.nextUniform(5,25);
-
-			wtargetF = new WallFeatures("RF", WallFeatures.WALL_TYPE.FURNITURE, 1.5, 0.5);
-			lT = new ArrayList<>();
-			lT.add(new Point3D(0, 0, 0));
-			wtargetI = new WallInit(names[i], new Point3D(x + 2, y + 2, 0), Point3D.ZERO, lT);
-			mcaf.getWalls().put(wtargetI, wtargetF);
-		}
+	private void buildExtWall(){
+		//Murs exterieurs
+		List<Point3D> lPext;
+		WallFeatures wfext = new WallFeatures("RF", WallFeatures.WALL_TYPE.OUTSIDE_WALL, 0.2, 2.5);
+		WallInit wiext;
+		lPext = new ArrayList<>();
+		lPext.add(new Point3D(0, 0, 0));
+		lPext.add(new Point3D(50, 0, 0));
+		lPext.add(new Point3D(50, 30, 0));
+		lPext.add(new Point3D(0, 30, 0));
+		lPext.add(new Point3D(0, 0, 0));
+		wiext = new WallInit("Outside Walls", new Point3D(2, 2, 0), Point3D.ZERO, lPext);
+		mcaf.getWalls().put(wiext, wfext);
 	}
 
 	/**
-	 * Construit le robot Recon initial.
-	 */
-	private void buildNiceRobot(){
-		RobotFeatures rf = new RobotFeatures("RF", RobotFeatures.ROBOT_TYPE.RECON);
-		RobotInit ri = new RobotInit("RI", Color.BLUE, new Point3D(4, 30, 0), new Point3D(0, 0, -90), false,
-				new Point3D(48, 28, 0));
-		mcaf.getRobots().put(ri, rf);
-	}
-
-	/**
-	 * Construit le robot ennemi.
-	 */
-	private void buildBadRobot(){
-		RobotFeatures rfbad = new RobotFeatures("RF", RobotFeatures.ROBOT_TYPE.ASSAULT);
-
-		RobotInit rb = new RobotInit("BadGuy", Color.RED, new Point3D(39.5, 17.5, 1), new Point3D(0, 0, 0),
-				true, Point3D.ZERO);
-		mcaf.getRobots().put(rb, rfbad);
-	}
-
-	/**
-	 * Construit le sol.
+	 * Construciton du sol.
 	 */
 	private void buildFloor() {
 		List<Point3D> lPext;

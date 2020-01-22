@@ -11,17 +11,6 @@ import javafx.scene.transform.Rotate;
 public class SelfRotator implements IMover {
 
 	MovableState initState;
-	Point3D axeVersAvant;
-	Point3D axeRot;
-
-	Rotate rot;
-	Point3D centre;
-	double r;
-
-	Point3D cible;
-	Point3D vecteurRayon;
-
-	Point3D rotationXYZ;
 	Point3D rotationXYZCible;
 	double vRotY;
 	double vRotZ;

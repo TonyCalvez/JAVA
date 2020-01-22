@@ -16,7 +16,7 @@ public interface IWall3D extends IMovable{
 	double getWidth();
 	double getHeight();
 	
-	List<Node> getMurs();
+	List<Node> getWalls();
 	List<Node> generateMursWithDistanceOfSecurity(double distanceOfSecurity);
 	
 	List<Point3D> getWallShape();

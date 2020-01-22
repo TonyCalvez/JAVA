@@ -25,8 +25,8 @@ import javafx.scene.transform.Translate;
 public class BorderAndPathGenerator {
 
 	
-	//Algorithme utilisant la nappe de points générée plus bas, l'espace avec lequel la nappe a été définit
-	//il génère les liens entre les points de la nappe directement adjacents qui sont en intervisibilité
+	//Algorithme utilisant la nappe de points gï¿½nï¿½rï¿½e plus bas, l'espace avec lequel la nappe a ï¿½tï¿½ dï¿½finit
+	//il gï¿½nï¿½re les liens entre les points de la nappe directement adjacents qui sont en intervisibilitï¿½
 	public static List<Point3DEdge> generateEdges(List<Point3DVertex> nape, double napeSpace,List<Bounds> murs) {
 		List<Point3DEdge> edges = new ArrayList<>();
 
@@ -62,9 +62,9 @@ public class BorderAndPathGenerator {
 	}
 
 	//Algorithme prenant une liste de boites englobantes, prenant la boite englobante de ces boites englobantes
-	//générére une nappe de points autour de ces murs sans passer dans les murs
-	//notez que le premier argument n'est pas utilisé... c'est pour une version ultérieure de l'algo
-	//le deuxième argument permet de définir la résolution de la nappe
+	//gï¿½nï¿½rï¿½re une nappe de points autour de ces murs sans passer dans les murs
+	//notez que le premier argument n'est pas utilisï¿½... c'est pour une version ultï¿½rieure de l'algo
+	//le deuxiï¿½me argument permet de dï¿½finir la rï¿½solution de la nappe
 	public static List<Point3DVertex> generateNapeOfPath(double distanceOfSecurity, double napeSpace,
 			List<Bounds> murs) {
 
@@ -177,7 +177,7 @@ public class BorderAndPathGenerator {
 		return paths;
 	}
 
-	//Algorithme permettant de générer un chemin de points longeant les murs	
+	//Algorithme permettant de gï¿½nï¿½rer un chemin de points longeant les murs	
 	public static List<Point3D> getBorder(IWall3D wall3D, double d, double detectsize) {
 		List<Point3D> borderPoints = new ArrayList<>();
 		List<Point3D> borderPointsSide1 = new ArrayList<>();
@@ -306,7 +306,7 @@ public class BorderAndPathGenerator {
 		}
 	}
 
-	//Algorithme prenant deux points de même altitude et génère un cylindre les reliant
+	//Algorithme prenant deux points de mï¿½me altitude et gï¿½nï¿½re un cylindre les reliant
 	//ceci permet de visualiser une ligne entre deux points en 3D
 	//la ligne 2D ne s'affiche pas bien en 3D en JFX8
 	public static Cylinder generateCylinderBetween(Point3D p1, Point3D p2) {
@@ -337,7 +337,7 @@ public class BorderAndPathGenerator {
 		return c;
 	}
 
-	//Permet de vérifier s'il y a intersection entre un cylindre et une liste de boites englobantes
+	//Permet de vï¿½rifier s'il y a intersection entre un cylindre et une liste de boites englobantes
 	public static boolean intersect2(Cylinder l, List<Bounds> nodes) {
 
 		for (Bounds n : nodes) {
@@ -351,7 +351,7 @@ public class BorderAndPathGenerator {
 
 	}
 
-	//Permet de vérifier l'intervisibilité entre deux points selon un ensemble de boites englobantes
+	//Permet de vï¿½rifier l'intervisibilitï¿½ entre deux points selon un ensemble de boites englobantes
 	public static boolean intervisibilityBetween(Point3D p1, Point3D p2, List<Bounds> walls) {
 		Cylinder c = generateCylinderBetween(p1, p2);
 		return !intersect2(c, walls);

@@ -3,7 +3,7 @@ package enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance;
 import enstabretagne.monitor.implementation.FX3DMonitor2;
 import enstabretagne.monitor.implementation.UniversalMonitor;
 
-public class MainMouvementCollisionAvoidance {
+public class Main {
 	public static void main(String[] args) {
 		boolean AFAP = false;
 

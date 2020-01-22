@@ -150,7 +150,7 @@ public class Wall extends SimEntity implements IMovable,IWall3D{
 	
 	List<Node> murs;
 	@Override
-	public List<Node> getMurs() {
+	public List<Node> getWalls() {
 		return murs;
 	}
 	
