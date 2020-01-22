@@ -16,11 +16,7 @@ public class StaticMover implements IMover{
 	 * 
 	 */
 
-	public StaticMover() {
-		
-	}
-
-	public void init(Point3D initPosition,Point3D rotationXYZ) {
+    public void init(Point3D initPosition,Point3D rotationXYZ) {
 		
 //		Point3D rotationXYZ = XYZRotator2.computeRotationXYZ(direction);
 		this.initState = new MovableState(initPosition, Point3D.ZERO, Point3D.ZERO, rotationXYZ, Point3D.ZERO, Point3D.ZERO);

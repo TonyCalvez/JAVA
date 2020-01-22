@@ -23,12 +23,10 @@ public class TypeAnalyseForLog {
 
 	/**
 	 * Instantiates a new type analyse for log.
-	 *
-	 * @param class1 the class 1
-	 * @param name the name
+	 *  @param name the name
 	 * @param mL2 the m L 2
 	 */
-	public TypeAnalyseForLog(Class<? extends Object> class1, String name, HashMap<String, Method> mL2) {
+	public TypeAnalyseForLog(String name, HashMap<String, Method> mL2) {
         classement = name;
 		if(mL2!=null) {			
 			titles = mL2.keySet().toArray(new String[0]);

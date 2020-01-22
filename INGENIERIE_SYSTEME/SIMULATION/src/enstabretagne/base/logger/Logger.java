@@ -29,9 +29,9 @@ import enstabretagne.simulation.core.ISimulationDateProvider;
  * The Class Logger.
  */
 /*
- * La classe Logger permet d'enregistrer les journaux et les données produites au cours de la simulation.
- * Les méthodes publique Detail, Error, Fatal, Information ajoutent d'elle même un timestamp lié au temps réel
- * Il délivre plusieurs services:
+ * La classe Logger permet d'enregistrer les journaux et les donnï¿½es produites au cours de la simulation.
+ * Les mï¿½thodes publique Detail, Error, Fatal, Information ajoutent d'elle mï¿½me un timestamp liï¿½ au temps rï¿½el
+ * Il dï¿½livre plusieurs services:
  * -
  */
 public class Logger {
@@ -267,8 +267,8 @@ public class Logger {
 						}
 						if (mL.containsKey(ma.name())) {
 							System.err.println(MessagesLogger.LoggerDataReuseOfAToRecordName + " : '" + ma.name()
-									+ "' trouvé sur la méthode '" + m.getName() + "'"
-									+ " déjà présente sur la méthode '" + mL.get(ma.name()) + "'" + " dans la classe '"
+									+ "' trouvï¿½ sur la mï¿½thode '" + m.getName() + "'"
+									+ " dï¿½jï¿½ prï¿½sente sur la mï¿½thode '" + mL.get(ma.name()) + "'" + " dans la classe '"
 									+ o.getClass().getName() + "'");
 							System.exit(1);
 						}
@@ -276,12 +276,12 @@ public class Logger {
 						System.out.println(ma.name());
 					}
 				}
-				TypeAnalyseForLog tpLog = new TypeAnalyseForLog(o.getClass(), a.name(), mL);
+				TypeAnalyseForLog tpLog = new TypeAnalyseForLog(a.name(), mL);
 				ObjectAnalyseForLog oa4l = new ObjectAnalyseForLog(tpLog, o);
 				dataLogAbilities.put(o.getClass(), tpLog);
 				return oa4l;
 			} else {
-				TypeAnalyseForLog tpLog = new TypeAnalyseForLog(o.getClass(), o.getClass().getSimpleName(), null);
+				TypeAnalyseForLog tpLog = new TypeAnalyseForLog(o.getClass().getSimpleName(), null);
 				return new ObjectAnalyseForLog(tpLog, o);
 			}
 		} else {
@@ -387,10 +387,10 @@ public class Logger {
 					}
 				} catch (ClassNotFoundException e1) {
 					System.err.println("Attention la classe de logger '" + e1.getMessage()
-							+ "' n'a pas été trouvée. Logger non pris en charge ");
+							+ "' n'a pas ï¿½tï¿½ trouvï¿½e. Logger non pris en charge ");
 				}
 			} else {
-				System.err.println("LoggerConfs N°" + i + " : " + lc.checkLoggerConf());
+				System.err.println("LoggerConfs Nï¿½" + i + " : " + lc.checkLoggerConf());
 				System.exit(1);
 			}
 		}
