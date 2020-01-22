@@ -97,8 +97,7 @@ public class Robot extends SimEntity implements IMovable, IRobot3D {
 		return ((RobotFeatures)getFeatures()).getType();
 	}
 
-	@Override
-	public boolean isBad() {
+	private boolean isBad() {
 		return rIni.isBad();
 	}
 

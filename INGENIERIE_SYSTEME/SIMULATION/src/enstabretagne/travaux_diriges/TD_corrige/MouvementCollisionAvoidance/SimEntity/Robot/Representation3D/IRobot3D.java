@@ -29,12 +29,7 @@ public interface IRobot3D extends IMovable{
 	 */
 	RobotFeatures.ROBOT_TYPE getType();
 
-	/**
-	 * @return true if robot is an enemy, false otherwise
-	 */
-	boolean isBad();
-
-	/**
+    /**
 	 * @return true if the robot can see the bad robot, false otherwise.
 	 */
 	boolean canSeeBadRobot();
