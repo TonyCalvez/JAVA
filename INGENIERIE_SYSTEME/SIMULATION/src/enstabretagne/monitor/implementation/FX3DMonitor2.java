@@ -60,8 +60,8 @@ import javafx.util.Duration;
 
 public class FX3DMonitor2 extends Application implements IMonitor {
 
-	// mapping entre un type d'entité et le constructeur sans argument d'une
-	// représentation 3D
+	// mapping entre un type d'entitï¿½ et le constructeur sans argument d'une
+	// reprï¿½sentation 3D
 	protected HashMap<Class<?>, Constructor<?>> drawActionsMapping;
 	protected HashMap<Class<?>, ObjTo3DMappingSettings> generalRepresentation3DSettings;
 	protected HashMap<ISimObject, IDrawAction> objectRepresentation;
@@ -358,9 +358,9 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 					if (dateToReach.compareTo(engine.SimulationDate()) < 0) {
 						Alert alert = new Alert(AlertType.INFORMATION);
 						alert.setTitle("Valeur la date");
-						alert.setHeaderText("La date saisie est inférieure à la date en cours");
+						alert.setHeaderText("La date saisie est infï¿½rieure ï¿½ la date en cours");
 						alert.setContentText("Date saisie = '" + isoLogicalTime.getText() + "'\n"
-								+ "Date minimale à saisir = '" + engine.SimulationDate() + "'");
+								+ "Date minimale ï¿½ saisir = '" + engine.SimulationDate() + "'");
 						isoLogicalTime.setText(engine.SimulationDate().toString());
 						alert.showAndWait();
 					} else {
@@ -628,7 +628,7 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	void newObjListener(ISimObject obj) {
 		Logger.Detail(obj, "Monitor3D.newObjListener",
-				obj.getName() + " configure son type pour une représentation 3D.");
+				obj.getName() + " configure son type pour une reprï¿½sentation 3D.");
 		for (Class c : drawActionsMapping.keySet()) {
 			if (c.isAssignableFrom(obj.getClass())) {
 				Constructor cnst = drawActionsMapping.get(c);
@@ -696,7 +696,7 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 
 		if (selectNextScenario() != null) {
 			setCurrentSeed(getXpPlan().getInitialSeed());
-			Logger.Detail(null, "runPlan", "début exécution");
+			Logger.Detail(null, "runPlan", "dï¿½but exï¿½cution");
 			run(true);
 		}
 
@@ -705,16 +705,16 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 	@Override
 	public void runPlan() {
 
-		Logger.Detail(null, "runPlan", "essai d'exécution");
+		Logger.Detail(null, "runPlan", "essai d'exï¿½cution");
 		while (selectNextScenario() != null) {
 			for (currentRepliqueNumber = 0; currentRepliqueNumber < getXpPlan()
 					.getNombreRepliques(); currentRepliqueNumber++) {
-				setCurrentSeed(getXpPlan().getInitialSeed() + currentRepliqueNumber);// on prend le numéro de réplique
+				setCurrentSeed(getXpPlan().getInitialSeed() + currentRepliqueNumber);// on prend le numï¿½ro de rï¿½plique
 																						// comme germe initial de la
-				// réplique
-				Logger.Detail(null, "runPlan", "début exécution");
+				// rï¿½plique
+				Logger.Detail(null, "runPlan", "dï¿½but exï¿½cution");
 				run(true);
-				Logger.Detail(null, "runPlan", "fin exécution");
+				Logger.Detail(null, "runPlan", "fin exï¿½cution");
 			}
 		}
 
@@ -803,7 +803,7 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 				if (IScenarioInstance.class.isAssignableFrom(c)) {
 					IScenarioInstance scenI = (IScenarioInstance) c.getConstructor().newInstance();
 					IScenario scen = scenI.getScenarioInstance(ScenariiSettings.settings.germeInitial);
-					Logger.Detail(null, "loadExperiencePlanFromSettings", "Scénario trouvé : " + scen.getName());
+					Logger.Detail(null, "loadExperiencePlanFromSettings", "Scï¿½nario trouvï¿½ : " + scen.getName());
 					scens.add(scen);
 				} else {
 					Logger.Fatal(null, "loadExperiencePlanFromSettings", ScenariiMessages.ScenariiNotAScenario);
