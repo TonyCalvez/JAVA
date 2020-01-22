@@ -15,19 +15,8 @@ public class SelfRotator implements IMover {
 	double vRotY;
 	double vRotZ;
 	double timeToReach;
-	
-	/*
-	 * LogicalDateTime d: date d'initialisation du mover 
-	 * Point3D positionInitiale: position initiale au moment de l'activation du mover
-	 * Point3D dirInitiale: direction en arriv�e sur la position initiale en x y z
-	 * Point3D pointAViser: point � viser (le syst�me calcule l'orientation)
-	 * double vitRot: vitesse de rotation. 
-	 * 
-	 */
-	public SelfRotator() {
-		
-	}
-	public void init(LogicalDateTime d, Point3D positionInitiale, Point3D rotationXYZ, Point3D pointAViser,	double vitRot) {
+
+    public void init(LogicalDateTime d, Point3D positionInitiale, Point3D rotationXYZ, Point3D pointAViser,	double vitRot) {
 
 
 		Point3D dirFinale = pointAViser.subtract(positionInitiale).normalize();
