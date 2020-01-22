@@ -10,6 +10,6 @@ import java.lang.annotation.Target;
 @Target(TYPE)
 public @interface Contrat3D {
 	
-	public Class<?> contrat();
+	Class<?> contrat();
 
 }

@@ -1,8 +1,8 @@
 package de.vogella.algorithms.dijkstra.model;
 
 public interface IVertex {
-  public String getId();
+  String getId();
 
-  public String getName();
+  String getName();
     
 } 

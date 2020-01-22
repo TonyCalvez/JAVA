@@ -28,11 +28,11 @@ public class LogicalDuration implements Comparable<LogicalDuration> {
 	}
 	
 	/** The Constant MAX_VALUE. */
-	//807 voir comment faire mieux l'arrondi en double de LongMaxValue. En retirant 807 ceci permet de faire un arrondi double inférieur
+	//807 voir comment faire mieux l'arrondi en double de LongMaxValue. En retirant 807 ceci permet de faire un arrondi double infï¿½rieur
 	public static final LogicalDuration MAX_VALUE = LogicalDuration.ofSeconds(Long.MAX_VALUE-807);
 	
 	/** The Constant POSITIVE_INFINITY. */
-	public static final LogicalDuration POSITIVE_INFINITY = new LogicalDuration((Duration)null);
+	public static final LogicalDuration POSITIVE_INFINITY = new LogicalDuration(null);
 	
 	/** The Constant ZERO. */
 	public static final LogicalDuration ZERO = new LogicalDuration(Duration.ZERO);

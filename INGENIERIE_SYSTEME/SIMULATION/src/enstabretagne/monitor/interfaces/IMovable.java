@@ -3,12 +3,12 @@ package enstabretagne.monitor.interfaces;
 import javafx.geometry.Point3D;
 
 public interface IMovable {
-		public Point3D getPosition();
-		public Point3D getVitesse();
-		public Point3D getAcceleration();
+		Point3D getPosition();
+		Point3D getVitesse();
+		Point3D getAcceleration();
 
 
-		public Point3D getRotationXYZ();
-		public Point3D getVitesseRotationXYZ();
-		public Point3D getAccelerationRotationXYZ();
+		Point3D getRotationXYZ();
+		Point3D getVitesseRotationXYZ();
+		Point3D getAccelerationRotationXYZ();
 }

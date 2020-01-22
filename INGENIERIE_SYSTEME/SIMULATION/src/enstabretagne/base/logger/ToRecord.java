@@ -22,5 +22,5 @@ public @interface ToRecord {
 	 *
 	 * @return the string
 	 */
-	public String name() ;
+    String name() ;
 }

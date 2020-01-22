@@ -216,14 +216,14 @@ public class ExcelDataLogger extends AbstractLogger{
 		String fileName;
 			
 			if(conf.parametres.containsKey(LoggerParamsNames.DirectoryName.toString())){
-				dirName =conf.parametres.get(LoggerParamsNames.DirectoryName.toString()).toString();
+				dirName = conf.parametres.get(LoggerParamsNames.DirectoryName.toString());
 				if(dirName.startsWith("."))
 					dirName = System.getProperty("user.dir")+ File.separator+dirName;
 			}
 			else
 				dirName = System.getProperty("user.dir");
 			if(conf.parametres.containsKey(LoggerParamsNames.FileName.toString())) {
-				fileName =System.currentTimeMillis()+conf.parametres.get(LoggerParamsNames.FileName.toString()).toString();
+				fileName =System.currentTimeMillis()+ conf.parametres.get(LoggerParamsNames.FileName.toString());
 				
 			}
 			else
@@ -237,8 +237,8 @@ public class ExcelDataLogger extends AbstractLogger{
 			
 		} catch (FileNotFoundException e) {
 			success=false;
-			System.err.println("Logger "+this.getClass().getCanonicalName()+" n'a pu être créé.)");
-			System.err.println(dirName+"\\"+fileName+" est sans doute ouvert ou n'existe pas (chemin non existant au préalable par exemple)");
+			System.err.println("Logger "+this.getClass().getCanonicalName()+" n'a pu ï¿½tre crï¿½ï¿½.)");
+			System.err.println(dirName+"\\"+fileName+" est sans doute ouvert ou n'existe pas (chemin non existant au prï¿½alable par exemple)");
 		}
 
 	    return success;
@@ -320,7 +320,7 @@ public class ExcelDataLogger extends AbstractLogger{
 			for(int i = 0;i<nbS;i++)
 			{
 				Sheet  s = wb.getSheetAt(i);
-				if(s.getRow(0)!=null) {//ceci arrive si on vide la mémoire tampon pour les grands fichiers. Dans ce cas pas de possibilité de traiter la mise en page de gros fichiers
+				if(s.getRow(0)!=null) {//ceci arrive si on vide la mï¿½moire tampon pour les grands fichiers. Dans ce cas pas de possibilitï¿½ de traiter la mise en page de gros fichiers
 					
 					Cell firstCell=s.getRow(0).getCell(0);
 					Cell lastCell=s.getRow(0).getCell((int) s.getRow(0).getLastCellNum()-1);

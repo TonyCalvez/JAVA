@@ -31,7 +31,7 @@ public enum LoggerParamsNames {
 	 *
 	 * @param paramName the param name
 	 */
-	private LoggerParamsNames(String paramName){
+    LoggerParamsNames(String paramName){
 		this.paramName = paramName;
 	}
 	

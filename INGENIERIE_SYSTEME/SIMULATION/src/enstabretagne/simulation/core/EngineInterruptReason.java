@@ -54,6 +54,6 @@ public enum EngineInterruptReason {
       /// Engine was stopped (pause) on user request or programmatically, by a Behavior Breakpoint
       /** The By behavior. */
    /// </summary>
-      ByBehavior; // behavior breakpoint requiring user action
+      ByBehavior // behavior breakpoint requiring user action
 }
 

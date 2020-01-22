@@ -58,14 +58,14 @@ public class CSVDataLogger extends AbstractLogger {
 		String dirName;
 		String fileName;
 		if (conf.parametres.containsKey(LoggerParamsNames.DirectoryName.toString())) {
-			dirName = conf.parametres.get(LoggerParamsNames.DirectoryName.toString()).toString();
+			dirName = conf.parametres.get(LoggerParamsNames.DirectoryName.toString());
 			if (dirName.startsWith("."))
 				dirName = System.getProperty("user.dir") + File.separator + dirName;
 		} else
 			dirName = System.getProperty("user.dir");
 		if (conf.parametres.containsKey(LoggerParamsNames.FileName.toString())) {
 			fileName = System.currentTimeMillis()
-					+ conf.parametres.get(LoggerParamsNames.FileName.toString()).toString();
+					+ conf.parametres.get(LoggerParamsNames.FileName.toString());
 
 		} else
 			fileName = "default.csv";
@@ -79,9 +79,9 @@ public class CSVDataLogger extends AbstractLogger {
 
 		} catch (IOException e) {
 			success = false;
-			System.err.println("Logger " + this.getClass().getCanonicalName() + " n'a pu être créé.)");
+			System.err.println("Logger " + this.getClass().getCanonicalName() + " n'a pu ï¿½tre crï¿½ï¿½.)");
 			System.err.println(dirName + "\\" + fileName
-					+ " est sans doute ouvert ou n'existe pas (chemin non existant au préalable par exemple)");
+					+ " est sans doute ouvert ou n'existe pas (chemin non existant au prï¿½alable par exemple)");
 		}
 		return success;
 	}

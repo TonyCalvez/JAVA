@@ -121,7 +121,7 @@ public abstract class AbstractMonitor implements IMonitor {
 				{
 					IScenarioInstance scenI = (IScenarioInstance) c.getConstructor().newInstance();
 					IScenario scen = scenI.getScenarioInstance(ScenariiSettings.settings.germeInitial);
-					Logger.Detail(null, "loadExperiencePlanFromSettings", "Seed trouvée : "+scen.getName());
+					Logger.Detail(null, "loadExperiencePlanFromSettings", "Seed trouvï¿½e : "+scen.getName());
 					scens.add(scen);
 				}
 				else

@@ -14,8 +14,7 @@ public class Main {
 			um.exit();
 		} else
 			FX3DMonitor2.launch(FX3DMonitor2.class, args);
-		;
-		
+
 	}
 	
 

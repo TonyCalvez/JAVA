@@ -283,9 +283,8 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 				simuLoop.play();
 			}
 		});
-		;
 
-		buttonBox.getChildren().add(b = new Button("Pause"));
+        buttonBox.getChildren().add(b = new Button("Pause"));
 		b.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -294,9 +293,8 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 				goon = false;
 			}
 		});
-		;
 
-		buttonBox.getChildren().add(b = new Button("Stop"));
+        buttonBox.getChildren().add(b = new Button("Stop"));
 		b.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -308,9 +306,8 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 				run(false);
 			}
 		});
-		;
 
-		buttonBox.getChildren().add(b = new Button("Speed up x5"));
+        buttonBox.getChildren().add(b = new Button("Speed up x5"));
 		b.setOnAction(new EventHandler<ActionEvent>(	) {
 			
 			@Override
@@ -378,9 +375,8 @@ public class FX3DMonitor2 extends Application implements IMonitor {
 				}
 			}
 		});
-		;
 
-		Label isoLogicalTimeLabel = new Label("ISO Time");
+        Label isoLogicalTimeLabel = new Label("ISO Time");
 		isoLogicalTimeLabel = new Label("ISO Time");
 		buttonBox.getChildren().add(isoLogicalTimeLabel);
 		isoLogicalTime = new TextField();

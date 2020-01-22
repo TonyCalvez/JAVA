@@ -51,8 +51,8 @@ public class SimObjectType implements ISimObjectType {
 	    Logger.Warning(this,"terminate",MessagesSimEngine.Finalizing, MessagesSimEngine.ZombiObjectFrom0, o.getClass().getName());
 	    o.terminate(restart);
 	  }
-	  objectInstances.clear();;
-	  return n;
+	  objectInstances.clear();
+        return n;
 	
 	}
 

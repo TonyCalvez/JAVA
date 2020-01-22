@@ -16,7 +16,7 @@ public interface ISimObjectType {
 	 *
 	 * @return the object instances
 	 */
-	public List<ISimObject> getObjectInstances();
+    List<ISimObject> getObjectInstances();
 	
 	/**
 	 * Terminate.
@@ -24,5 +24,5 @@ public interface ISimObjectType {
 	 * @param restart the restart
 	 * @return the int
 	 */
-	public int terminate(boolean restart);
+    int terminate(boolean restart);
 }

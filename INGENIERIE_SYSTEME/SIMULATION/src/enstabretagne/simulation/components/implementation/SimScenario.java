@@ -128,7 +128,7 @@ public class SimScenario extends SimEntity implements IScenario,IScenarioIdProvi
 	protected void AfterActivate(IEntity sender, boolean starting) {
 		Logger.Data(this);
 		for(IEntity e:children)
-			((SimEntity) e).activate();
+			e.activate();
 			
 	}
 
@@ -189,7 +189,7 @@ public class SimScenario extends SimEntity implements IScenario,IScenarioIdProvi
 	@Override
 	protected void BeforeDeactivating(IEntity sender, boolean starting) {
 		for(IEntity e:children)
-			((SimEntity) e).deactivate();		
+			e.deactivate();
 		
 	}
 

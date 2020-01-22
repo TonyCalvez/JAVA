@@ -34,7 +34,7 @@ public enum TimeUnits {
 	 *
 	 * @param name the name
 	 */
-	private TimeUnits(String name){
+    TimeUnits(String name){
 		this.name=name;
 	}
 		

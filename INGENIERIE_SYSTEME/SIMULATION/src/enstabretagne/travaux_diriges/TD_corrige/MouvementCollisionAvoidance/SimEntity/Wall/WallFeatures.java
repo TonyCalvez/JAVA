@@ -9,8 +9,8 @@ public class WallFeatures extends SimFeatures{
 		INSIDE_WALL,
 		CHAIR,
 		TABLE,
-		FLOOR;
-	}
+		FLOOR
+    }
 
 	private Color color;
 	private WALL_TYPE type;

@@ -6,8 +6,8 @@ import enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimE
 public class RobotFeatures extends SimFeatures{
 	public enum ROBOT_TYPE {
 		RECONNAISSANCE,
-		ASSAULT;
-	}
+		ASSAULT
+    }
 
 	private double vitesseMax;
 	private double accelerationMax;

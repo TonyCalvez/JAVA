@@ -43,7 +43,7 @@ public enum LogLevels {
 	 *
 	 * @param s the s
 	 */
-	private LogLevels(String s)
+    LogLevels(String s)
 	{
 		this.s=s;
 	}

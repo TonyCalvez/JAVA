@@ -15,21 +15,21 @@ public interface ISimEvent extends Comparable<ISimEvent>{
 	/**
 	 * Process.
 	 */
-	public void Process();
+    void Process();
 	
 	/**
 	 * Schedule date.
 	 *
 	 * @return the logical date time
 	 */
-	public LogicalDateTime ScheduleDate();
+    LogicalDateTime ScheduleDate();
 	
 	/**
 	 * Owner.
 	 *
 	 * @return the i sim object
 	 */
-	public ISimObject Owner();
+    ISimObject Owner();
 	
 	/**
 	 * Initialize.
@@ -37,19 +37,19 @@ public interface ISimEvent extends Comparable<ISimEvent>{
 	 * @param simObject the sim object
 	 * @param t the t
 	 */
-	public void initialize(ISimObject simObject, LogicalDateTime t);
+    void initialize(ISimObject simObject, LogicalDateTime t);
 	
 	/**
 	 * Terminate.
 	 */
-	public void terminate();
+    void terminate();
 	
 	/**
 	 * Reset process date.
 	 *
 	 * @param simulationDate the simulation date
 	 */
-	public void resetProcessDate(LogicalDateTime simulationDate);
+    void resetProcessDate(LogicalDateTime simulationDate);
 	
 	/**
 	 * Time event line.
@@ -57,5 +57,5 @@ public interface ISimEvent extends Comparable<ISimEvent>{
 	 * @param r the r
 	 * @return the string
 	 */
-	public String TimeEventLine(int r);
+    String TimeEventLine(int r);
 }

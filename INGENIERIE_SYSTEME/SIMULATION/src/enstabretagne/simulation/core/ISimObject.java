@@ -8,12 +8,12 @@ import enstabretagne.base.time.LogicalDuration;
 
 // TODO: Auto-generated Javadoc
 /**
- * Cette interface caractérise l'objet de base manipulé par le moteur.
- * Elle contient les fonctions essentielles pour poster/déposter des événements
- * La seule fonction liée à un cycle de vie est Terminate().<br>
- * Les autres fonctions liées au cycle de vie d'une entité sont portées par {@link IEntity}
+ * Cette interface caractï¿½rise l'objet de base manipulï¿½ par le moteur.
+ * Elle contient les fonctions essentielles pour poster/dï¿½poster des ï¿½vï¿½nements
+ * La seule fonction liï¿½e ï¿½ un cycle de vie est Terminate().<br>
+ * Les autres fonctions liï¿½es au cycle de vie d'une entitï¿½ sont portï¿½es par {@link IEntity}
  * 
- * La fonction <code>getName()</code> est essentielle. Elle donne l'élément qui identifie l'objet sans ambiguité.
+ * La fonction <code>getName()</code> est essentielle. Elle donne l'ï¿½lï¿½ment qui identifie l'objet sans ambiguitï¿½.
  */
 public interface ISimObject {
 	
@@ -25,8 +25,8 @@ public interface ISimObject {
 	LogicalDateTime CurrentDate();
 	
 	/**
-	 * Cette fonction permet à un objet de demander l'arrêt de la simulation.
-	 * Fonction plutôt à usage du framework plus que des applications de simulation.
+	 * Cette fonction permet ï¿½ un objet de demander l'arrï¿½t de la simulation.
+	 * Fonction plutï¿½t ï¿½ usage du framework plus que des applications de simulation.
 	 */
 	void interruptEngineByDate();
 	
@@ -42,7 +42,7 @@ public interface ISimObject {
 	 *
 	 * @param ev the ev
 	 */
-	public void Post (ISimEvent ev);
+    void Post(ISimEvent ev);
 	
 	/**
 	 * Post.
@@ -50,7 +50,7 @@ public interface ISimObject {
 	 * @param ev the ev
 	 * @param t the t
 	 */
-	public void Post (ISimEvent ev,LogicalDateTime t);
+    void Post(ISimEvent ev, LogicalDateTime t);
 	
 	/**
 	 * Post.
@@ -58,31 +58,31 @@ public interface ISimObject {
 	 * @param ev the ev
 	 * @param dt the dt
 	 */
-	public void Post (ISimEvent ev,LogicalDuration dt);
+    void Post(ISimEvent ev, LogicalDuration dt);
 	
 	/**
 	 * Un post.
 	 *
 	 * @param ev the ev
 	 */
-	public void UnPost(ISimEvent ev);
+    void UnPost(ISimEvent ev);
 	
 	/**
 	 * Un post all events.
 	 */
-	public void UnPostAllEvents();
+    void UnPostAllEvents();
 	
 	/**
 	 * Terminate.
 	 *
 	 * @param restart the restart
 	 */
-	public void terminate(boolean restart);
+    void terminate(boolean restart);
 	
 	/**
 	 * Gets the name.
 	 *
 	 * @return the name
 	 */
-	public String getName();
+    String getName();
 }

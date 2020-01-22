@@ -16,5 +16,5 @@ public interface ISimTimeEvent extends ISimEvent{
 	 *
 	 * @return the process date
 	 */
-	public LogicalDateTime getProcessDate();
+    LogicalDateTime getProcessDate();
 }

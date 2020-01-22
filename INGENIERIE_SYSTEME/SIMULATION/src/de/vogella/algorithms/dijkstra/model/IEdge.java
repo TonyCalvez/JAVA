@@ -2,12 +2,12 @@ package de.vogella.algorithms.dijkstra.model;
 
 public interface IEdge  {
   
-  public String getId();
+  String getId();
 
-  public IVertex getDestination();
+  IVertex getDestination();
   
-  public IVertex getSource();
+  IVertex getSource();
   
-  public double getWeight();
+  double getWeight();
   
 }

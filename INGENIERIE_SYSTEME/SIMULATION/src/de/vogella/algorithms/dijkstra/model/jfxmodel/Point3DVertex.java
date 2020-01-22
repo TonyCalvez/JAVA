@@ -54,12 +54,9 @@ public class Point3DVertex implements IVertex{
 	      return false;
 	    Point3DVertex other = (Point3DVertex) obj;
 	    if (getId() == null) {
-	      if (other.getId() != null)
-	        return false;
-	    } else if (!getId().equals(other.getId()))
-	      return false;
-	    return true;
-	  }
+            return other.getId() == null;
+	    } else return getId().equals(other.getId());
+      }
 
 	  @Override
 	  public String toString() {

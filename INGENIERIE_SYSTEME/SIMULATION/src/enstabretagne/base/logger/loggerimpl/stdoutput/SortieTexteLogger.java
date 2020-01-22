@@ -60,8 +60,8 @@ public class SortieTexteLogger extends AbstractLogger {
 		if(args!=null) {
 			for(Object arg : args){
 				if(Exception.class.isAssignableFrom(arg.getClass()))
-					((Exception) arg).printStackTrace(System.err);;
-			}
+					((Exception) arg).printStackTrace(System.err);
+            }
 		}
 		String logicalDate;
 		if(d==null)
@@ -78,23 +78,23 @@ public class SortieTexteLogger extends AbstractLogger {
 					s=s+r.getTitles()[i]+"="+r.getRecords()[i]+";";
 					
 				}
-				System.out.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+Long.toString(scenarioId.getRepliqueNumber())+sep+logicalDate + sep + level + sep + s + sep+message,args));
+				System.out.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+ scenarioId.getRepliqueNumber() +sep+logicalDate + sep + level + sep + s + sep+message,args));
 			}
 			else if(level.equals(LogLevels.error) || level.equals(LogLevels.fatal))
 			{
-				System.err.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+Long.toString(scenarioId.getRepliqueNumber())+sep+logicalDate + sep + level + sep + obj.toString() + sep+message,args));				
+				System.err.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+ scenarioId.getRepliqueNumber() +sep+logicalDate + sep + level + sep + obj.toString() + sep+message,args));
 			}
 			else
-				System.out.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+Long.toString(scenarioId.getRepliqueNumber())+sep+logicalDate + sep + level + sep + obj.toString() + sep+message,args));
+				System.out.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+ scenarioId.getRepliqueNumber() +sep+logicalDate + sep + level + sep + obj.toString() + sep+message,args));
 		}
 		else {
 			if(level.equals(LogLevels.error) || level.equals(LogLevels.fatal))
 			{
-				System.err.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+Long.toString(scenarioId.getRepliqueNumber())+sep+logicalDate + sep + level + sep + sep+message,args));				
+				System.err.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+ scenarioId.getRepliqueNumber() +sep+logicalDate + sep + level + sep + sep+message,args));
 			}
 			else
 			{			
-			System.out.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+Long.toString(scenarioId.getRepliqueNumber())+sep+logicalDate + sep + level + sep + sep+message,args));
+			System.out.println(String.format(elTxt+sep+ scenarioId.getScenarioId()+sep+ scenarioId.getRepliqueNumber() +sep+logicalDate + sep + level + sep + sep+message,args));
 			}
 		}
 	}
