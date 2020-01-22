@@ -42,7 +42,6 @@ public class RobotRepresentation3D extends Representation3D{
 	@Override
 	public void init(Group world, Object obj) {
 		this.gridMaterial = new PhongMaterial(Color.LIGHTBLUE);
-		this.gridMaterial.setDiffuseMap(new Image("file:img/grid.jpg"));
 		this.edges = new HashMap<>();
 		myworld = world;
 		this.currentLineOfSights = new HashMap<>();
@@ -53,39 +52,32 @@ public class RobotRepresentation3D extends Representation3D{
 		monRobot = new Group();
 		PhongMaterial bodyMaterial;
 		bodyMaterial = new PhongMaterial(robot3D.getColor());
-		bodyMaterial.setDiffuseMap(new Image("file:img/metal.jpg"));
 
-		Box body = new Box(robot3D.getSize()/3,robot3D.getSize()/3,robot3D.getSize());
+
+		Sphere body = new Sphere(robot3D.getSize()/2);
 		body.setTranslateZ(robot3D.getSize()/2);
 		body.setMaterial(bodyMaterial);
 		monRobot.getChildren().add(body);
-
 		Sphere head = new Sphere(robot3D.getSize()/2.7);
 		head.setTranslateZ(head.getRadius() + robot3D.getSize());
 		head.setMaterial(bodyMaterial);
 		monRobot.getChildren().add(head);
 
-		PhongMaterial eyeMaterial = new PhongMaterial(Color.GREY);
-		eyeMaterial.setDiffuseMap(new Image("file:img/eye.png"));
-		Sphere rightEye = new Sphere(robot3D.getSize()/10);
-		rightEye.setTranslateZ(head.getRadius() + robot3D.getSize());
-		rightEye.setTranslateY(head.getRadius()/3);
-		rightEye.setTranslateX(head.getRadius());
-		rightEye.setMaterial(eyeMaterial);
-		monRobot.getChildren().add(rightEye);
-		Sphere leftEye = new Sphere(robot3D.getSize()/10);
-		leftEye.setTranslateZ(head.getRadius() + robot3D.getSize());
-		leftEye.setTranslateY(-head.getRadius()/3);
-		leftEye.setTranslateX(head.getRadius());
-		leftEye.setMaterial(eyeMaterial);
-		monRobot.getChildren().add(leftEye);
+		PhongMaterial eyeMaterial = new PhongMaterial(Color.BLACK);
+
+		Sphere eye = new Sphere(robot3D.getSize()/8);
+		eye.setTranslateZ(head.getRadius() + robot3D.getSize());
+		eye.setTranslateY(head.getRadius()/4);
+		eye.setTranslateX(head.getRadius());
+		eye.setMaterial(eyeMaterial);
+		monRobot.getChildren().add(eye);
 
 		if (robot3D.getType().equals(RobotFeatures.ROBOT_TYPE.ASSAULT)){
-			Cylinder weapon = new Cylinder(robot3D.getSize()/10,robot3D.getSize());
+			Box weapon = new Box(robot3D.getSize()/8,robot3D.getSize()/2,robot3D.getSize()/10);
 			weapon.setMaterial(new PhongMaterial(Color.BLACK));
 			weapon.setTranslateX(robot3D.getSize()/1.5);
 			weapon.setTranslateZ(robot3D.getSize());
-			weapon.setTranslateY(robot3D.getSize()/2);
+			weapon.setTranslateY(robot3D.getSize()/7);
 			Rotate rotate = new Rotate(90,new Point3D(0,0,1));
 			weapon.getTransforms().add(rotate);
 			monRobot.getChildren().add(weapon);
@@ -109,7 +101,7 @@ public class RobotRepresentation3D extends Representation3D{
 			this.bounds.add(n.getBoundsInParent());
 		}
 	}
-	
+
 	@Override
 	public void update() {
 		if (robot3D.isAlive()) {
@@ -124,7 +116,7 @@ public class RobotRepresentation3D extends Representation3D{
 			Affine a = XYZRotator2.getTransformByAngle(rot);
 			monRobot.getTransforms().setAll(a);
 			updateLineOfSightBadRobot();
-			//updateDiscoveredGrid();
+
 		}
 		else {
 			myworld.getChildren().remove(monRobot);
@@ -136,7 +128,7 @@ public class RobotRepresentation3D extends Representation3D{
 				myworld.getChildren().remove(c);
 			}
 		}
-		
+
 	}
 
 	private void updateLineOfSightBadRobot() {

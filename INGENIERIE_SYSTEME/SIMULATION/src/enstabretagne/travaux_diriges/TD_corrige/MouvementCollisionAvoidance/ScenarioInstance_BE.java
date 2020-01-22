@@ -45,7 +45,7 @@ public class ScenarioInstance_BE implements IScenarioInstance {
 	 */
 	private void buildNiceRobot(){
 		RobotFeatures rf = new RobotFeatures("RF", RobotFeatures.ROBOT_TYPE.RECONNAISSANCE);
-		RobotInit ri = new RobotInit("RI", Color.BLUE, new Point3D(4, 30, 0), new Point3D(0, 0, -90), false,
+		RobotInit ri = new RobotInit("RI", Color.GREENYELLOW, new Point3D(4, 30, 0), new Point3D(0, 0, -90), false,
 				new Point3D(48, 28, 0));
 		mcaf.getRobots().put(ri, rf);
 	}

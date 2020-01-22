@@ -24,19 +24,19 @@ public class WallFeatures extends SimFeatures{
 		this.type = type;
 		switch (this.type){
 			case OUTSIDE_WALL:
-				this.color = Color.DARKGREY;
+				this.color = Color.SEAGREEN;
 				break;
 			case FLOOR:
-				this.color = Color.LIGHTGREY;
+				this.color = Color.LIGHTCYAN;
 				break;
 			case INSIDE_WALL:
-				this.color = Color.GREEN;
+				this.color = Color.MEDIUMSEAGREEN;
 				break;
 			case CHAIR:
-				this.color = Color.ORANGE;
+				this.color = Color.ROSYBROWN;
 				break;
 			case TABLE:
-				this.color = Color.BLUE;
+				this.color = Color.BROWN;
 				break;
 		}
 	}
