@@ -17,29 +17,29 @@ import enstabretagne.simulation.core.ISimEngine;
 
 // TODO: Auto-generated Javadoc
 /**
- * Cette interface complète l'interface {@link ISimObject} des fonctions donnant un cycle de vie à l'entité.
- * Elle rajoute de plus la gestion de la filiation d'une entité.
+ * Cette interface compl?te l'interface {@link ISimObject} des fonctions donnant un cycle de vie ? l'entit?.
+ * Elle rajoute de plus la gestion de la filiation d'une entit?.
  */
 public interface IEntity extends enstabretagne.simulation.core.ISimObject{
 
 		/**
-		 * Liste de callbacks permettant à l'entité de prévenir de 
-		 * son passage en phase de création.
+		 * Liste de callbacks permettant ? l'entit? de pr?venir de 
+		 * son passage en phase de cr?ation.
 		 *
 		 * @return the list
 		 */
 	    List<CreationNotification> OnCreating();
 
 		/**
-		 * Liste de callbacks permettant à l'entité de prévenir de 
-		 * son passage à l'état créé.
+		 * Liste de callbacks permettant ? l'entit? de pr?venir de 
+		 * son passage ? l'?tat cr??.
 		 *
 		 * @return the list
 		 */
 	    List<CreationNotification> OnCreated();
 
 	    /**
-    	 * Liste de callbacks permettant à l'entité de prévenir de 
+    	 * Liste de callbacks permettant ? l'entit? de pr?venir de 
 		 * son passage en phase d'initialisation.
     	 *
     	 * @return the list
@@ -47,15 +47,15 @@ public interface IEntity extends enstabretagne.simulation.core.ISimObject{
 	    List<InitializationNotification> OnInitializing();
 
 		/**
-		 * Liste de callbacks permettant à l'entité de prévenir de 
-		 * son passage en phase initialisée.
+		 * Liste de callbacks permettant ? l'entit? de pr?venir de 
+		 * son passage en phase initialis?e.
 		 *
 		 * @return the list
 		 */
 	    List<InitializationNotification> OnInitialized();
 
 	    /**
-    	 * Liste de callbacks permettant à l'entité de prévenir de 
+    	 * Liste de callbacks permettant ? l'entit? de pr?venir de 
 		 * son passage en phase d'activation.
     	 *
     	 * @return the list
@@ -63,15 +63,15 @@ public interface IEntity extends enstabretagne.simulation.core.ISimObject{
     	List<ActivationNotification> OnActivating();
 
 	    /**
-    	 * Liste de callbacks permettant à l'entité de prévenir de 
-		 * son passage en phase activé.
+    	 * Liste de callbacks permettant ? l'entit? de pr?venir de 
+		 * son passage en phase activ?.
     	 *
     	 * @return the list
     	 */
 	    List<ActivationNotification> OnActivated();
 
 	    /**
-    	 * Liste de callbacks permettant à l'entité de prévenir de 
+    	 * Liste de callbacks permettant ? l'entit? de pr?venir de 
 		 * avant de rentrer dans le processus de terminaison.
     	 *
     	 * @return the list
@@ -79,16 +79,16 @@ public interface IEntity extends enstabretagne.simulation.core.ISimObject{
 	    List<TerminatingNotification> OnTerminating();
 
 	    /**
-    	 * Liste de callbacks permettant à l'entité de prévenir de 
-		 * avant de rentrer dans le processus de désactivation.
+    	 * Liste de callbacks permettant ? l'entit? de pr?venir de 
+		 * avant de rentrer dans le processus de d?sactivation.
     	 *
     	 * @return the list
     	 */
 	    List<DeactivationNotification> OnDeactivating();
 
 	    /**
-    	 *Liste de callbacks permettant à l'entité de prévenir de 
-		 * qu'elle est désactivée.
+    	 *Liste de callbacks permettant ? l'entit? de pr?venir de 
+		 * qu'elle est d?sactiv?e.
     	 *
     	 * @return the list
     	 */
@@ -117,21 +117,21 @@ public interface IEntity extends enstabretagne.simulation.core.ISimObject{
 	    String getFullName();
 
 	    /**
-    	 * Permet de récupérer le générateur de nombres aléatoires.
+    	 * Permet de r?cup?rer le g?n?rateur de nombres al?atoires.
     	 *
     	 * @return the more random
     	 */
 	    MoreRandom RandomGenerator();
 	    
 	    /**
-    	 * Cette fonction permet d'activer l'entité. 
-    	 * Il est de la responsabilité de l'entité parente d'activer ses filles.
+    	 * Cette fonction permet d'activer l'entit?. 
+    	 * Il est de la responsabilit? de l'entit? parente d'activer ses filles.
     	 */
     	void activate();
 	    
     	/**
-    	 * Cette fonction permet d'activer l'entité. 
-    	 * Il est de la responsabilité de l'entité parente de désactiver ses filles.
+    	 * Cette fonction permet d'activer l'entit?. 
+    	 * Il est de la responsabilit? de l'entit? parente de d?sactiver ses filles.
     	 */
     	void deactivate();
 	    
@@ -144,7 +144,7 @@ public interface IEntity extends enstabretagne.simulation.core.ISimObject{
 	    
     	/**
     	 * Gets the parent.
-    	 * renvoie Null le cas où il n'y a pas de parents.
+    	 * renvoie Null le cas o? il n'y a pas de parents.
     	 *
     	 * @return the parent
     	 */
@@ -152,8 +152,8 @@ public interface IEntity extends enstabretagne.simulation.core.ISimObject{
 
 		/**
 		 * Sets the engine.
-		 * Cette méthode n'est pas à utiliser en temps normal.
-		 * Plutôt à usage du framework de simulation plus que des applications de simulation
+		 * Cette m?thode n'est pas ? utiliser en temps normal.
+		 * Plut?t ? usage du framework de simulation plus que des applications de simulation
 		 *
 		 * @param value the new engine
 		 */
