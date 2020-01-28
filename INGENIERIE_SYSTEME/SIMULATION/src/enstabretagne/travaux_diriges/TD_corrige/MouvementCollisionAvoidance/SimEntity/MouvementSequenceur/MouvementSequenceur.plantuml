@@ -1,0 +1,242 @@
+@startuml
+
+title __MOUVEMENTSEQUENCEUR's Class Diagram__\n
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur {
+          ~ target : Point3D
+          + BackToInitialPositionMouvementSequenceur()
+          # AfterActivate()
+          - initRotation()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur.RectilinearMouvementFinished {
+          + Process()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur.SelfRotationFinished {
+          + Process()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover {
+          ~ axeRot : Point3D
+          ~ axeVersAvant : Point3D
+          ~ centre : Point3D
+          ~ cible : Point3D
+          ~ r : double
+          ~ rotPos : Rotate
+          ~ rotVit : Rotate
+          ~ vRot : double
+          ~ vecteurRayon : Point3D
+          + CircularMover()
+          + InitCircularMover()
+          + getAcceleration()
+          + getAccelerationRotationXYZ()
+          + getDurationToReach()
+          + getPosition()
+          + getRotationXYZ()
+          + getVitesse()
+          + getVitesseRotationXYZ()
+          + init()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur {
+          + EntityMouvementSequenceur()
+          + canSeeTable()
+          + changeSpeed()
+          + getAcceleration()
+          + getAccelerationRotationXYZ()
+          + getDurationToReach()
+          + getPosition()
+          + getRotationXYZ()
+          + getVitesse()
+          + getVitesseRotationXYZ()
+          + onParentSet()
+          # AfterActivate()
+          # AfterDeactivated()
+          # AfterTerminated()
+          # BeforeActivating()
+          # BeforeDeactivating()
+          # initializeSimEntity()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature {
+          - maxLinearSpeed : double
+          - maxSelfRotationSpeed : double
+          + EntityMouvementSequenceurFeature()
+          + getMaxLinearSpeed()
+          + getMaxSelfRotationSpeed()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit {
+          - name : String
+          - target : Point3D
+          + EntityMouvementSequenceurInit()
+          + getEtatInitial()
+          + getName()
+          + getTarget()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur {
+          ~ target : Point3D
+          + FindRobotMouvementSequenceur()
+          # AfterActivate()
+          - initRotation()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur.RectilinearMouvementFinished {
+          + Process()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur.SelfRotationFinished {
+          + Process()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover {
+          ~ direction : Point3D
+          ~ target : Point3D
+          + RectilinearMover()
+          + RectilinearMover()
+          + getAcceleration()
+          + getAccelerationRotationXYZ()
+          + getDurationToReach()
+          + getPosition()
+          + getRotationXYZ()
+          + getVitesse()
+          + getVitesseRotationXYZ()
+          + init()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator {
+          ~ rotationXYZCible : Point3D
+          ~ timeToReach : double
+          ~ vRotY : double
+          ~ vRotZ : double
+          + getAcceleration()
+          + getAccelerationRotationXYZ()
+          + getDurationToReach()
+          + getPosition()
+          + getRotationXYZ()
+          + getVitesse()
+          + getVitesseRotationXYZ()
+          + init()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance {
+    namespace SimEntity.MouvementSequenceur {
+      class enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover {
+          + getAcceleration()
+          + getAccelerationRotationXYZ()
+          + getDurationToReach()
+          + getPosition()
+          + getRotationXYZ()
+          + getVitesse()
+          + getVitesseRotationXYZ()
+          + init()
+      }
+    }
+  }
+  
+
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur -up-|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature : emsf
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit : emsi
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur +-down- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur.RectilinearMouvementFinished
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur +-down- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur.SelfRotationFinished
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur.RectilinearMouvementFinished -up-|> enstabretagne.simulation.core.implementation.SimEvent
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.BackToInitialPositionMouvementSequenceur.SelfRotationFinished -up-|> enstabretagne.simulation.core.implementation.SimEvent
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover o-- enstabretagne.monitor.implementation.MovableState : initState
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur -up-|> enstabretagne.simulation.components.implementation.SimEntity
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.CircularMover : circulrMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit : ini
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover : mv
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover : rectilinearMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator : selfRotator
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover : staticMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature -up-|> enstabretagne.simulation.components.data.SimFeatures
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit -up-|> enstabretagne.simulation.components.data.SimInitParameters
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit o-- enstabretagne.monitor.interfaces.IMovable : etatInitial
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur -up-|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceur
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurFeature : emsf
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur o-- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.EntityMouvementSequenceurInit : emsi
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur +-down- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur.RectilinearMouvementFinished
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur +-down- enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur.SelfRotationFinished
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur.RectilinearMouvementFinished -up-|> enstabretagne.simulation.core.implementation.SimEvent
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.FindRobotMouvementSequenceur.SelfRotationFinished -up-|> enstabretagne.simulation.core.implementation.SimEvent
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.RectilinearMover o-- enstabretagne.monitor.implementation.MovableState : initState
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.SelfRotator o-- enstabretagne.monitor.implementation.MovableState : initState
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover .up.|> enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.Robot.IMover
+  enstabretagne.travaux_diriges.TD_corrige.MouvementCollisionAvoidance.SimEntity.MouvementSequenceur.StaticMover o-- enstabretagne.monitor.implementation.MovableState : initState
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

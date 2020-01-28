@@ -1,0 +1,261 @@
+@startuml
+
+title __IMPLEMENTATION's Class Diagram__\n
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      abstract class enstabretagne.monitor.implementation.AbstractMonitor {
+          # currentRepliqueNumber : long
+          - currentSeed : long
+          - scenarioIndex : int
+          + AbstractMonitor()
+          + getCurrentScenario()
+          + getCurrentSeed()
+          + getXpPlan()
+          + loadExperiencePlan()
+          + loadExperiencePlanFromSettings()
+          + selectNextScenario()
+          + selectScenario()
+          # setCurrentSeed()
+          - selectScenario()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.CameraManager {
+          ~ axyz : Point3D
+          ~ camera : PerspectiveCamera
+          ~ cameraGroup : Group
+          ~ dir : Point3D
+          ~ facteurVitesse : double
+          ~ pointVue : Point3D
+          ~ ry : Rotate
+          ~ rz : Rotate
+          ~ t : Translate
+          {static} - CAMERA_FAR_CLIP : double
+          {static} - CAMERA_NEAR_CLIP : double
+          - mouseDeltaX : double
+          - mouseDeltaY : double
+          - mouseOldX : double
+          - mouseOldY : double
+          - mousePosX : double
+          - mousePosY : double
+          - sc : Scale
+          + CameraManager()
+          + avancer()
+          + avancerHorizontal()
+          + getCamera()
+          + getKeyBoardHandler()
+          + getMouseDraggedHandler()
+          + getMousePressedHandler()
+          + handleKeyboard()
+          + handleMouseDragged()
+          + lateral()
+          + monter()
+          + zoomOn()
+          # buildCamera()
+          # handleMousePressed()
+          ~ moveAbsoluteByDirection()
+          ~ moveAbsoluteByRotation()
+          ~ moveAbsoluteByTranslation()
+          ~ moveRelative()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.ExperiencePlan {
+          - initialSeed : long
+          - listeScenarios : List<IScenario>
+          - nombreRepliques : long
+          + ExperiencePlan()
+          + ExperiencePlan()
+          + getInitialSeed()
+          + getListeScenarios()
+          + getNombreRepliques()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.FX3DMonitor2 {
+          # FX3DMonitor2Stage : Stage
+          # currentRepliqueNumber : long
+          # drawActionsMapping : HashMap<Class<?>, Constructor<?>>
+          # generalRepresentation3DSettings : HashMap<Class<?>, ObjTo3DMappingSettings>
+          # keyHandlers : List<EventHandler<KeyEvent>>
+          # mouseDraggedHandlers : List<EventHandler<MouseEvent>>
+          # mousePressedHandlers : List<EventHandler<MouseEvent>>
+          # objectRepresentation : HashMap<ISimObject, IDrawAction>
+          # requestStop : boolean
+          ~ cb : CheckBox
+          ~ comboBox : ComboBox<ISimObject>
+          ~ defaultDir : Point3D
+          ~ entitiesWorld : Group
+          ~ environmentWorld : Group
+          ~ isoLogicalTime : TextField
+          ~ options : ObservableList<ISimObject>
+          ~ root : Group
+          ~ scene : Scene
+          ~ timeSpeedFactorTF : TextField
+          ~ world : Group
+          - currentSeed : long
+          - fps : int
+          - goon : boolean
+          - rateLogicalTimeOverRealTime : double
+          - scenarioIndex : int
+          - simuLoop : Timeline
+          - timeSpeedFactor : long
+          + ClearGUI()
+          + FX3DMonitor2()
+          + createUI()
+          + exit()
+          + getCurrentRepliqueNumber()
+          + getCurrentScenario()
+          + getCurrentSeed()
+          + getEngine()
+          + getLogicalTimeSpeed()
+          + getXpPlan()
+          + load3DConfiguration()
+          + loadExperiencePlan()
+          + loadExperiencePlanFromSettings()
+          + pause()
+          + realTimeLoop()
+          + run()
+          + runPlan()
+          + runPlanRT()
+          + selectNextScenario()
+          + selectScenario()
+          + setLogicalTimeSpeed()
+          + simulateRealTime2()
+          + start()
+          + stop()
+          # setCurrentSeed()
+          ~ newObjInitialized()
+          ~ newObjListener()
+          - initHandlers()
+          - selectScenario()
+          - stopAll()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.FX3DMonitor2.UnTest {
+          ~ g : int
+          ~ ss : String
+          + UnTest()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.MovableState {
+          {static} + ZERO : MovableState
+          ~ acceleration : Point3D
+          ~ accelerationRotationXYZ : Point3D
+          ~ position : Point3D
+          ~ rotationXYZ : Point3D
+          ~ vitesse : Point3D
+          ~ vitesseRotationXYZ : Point3D
+          + MovableState()
+          + getAcceleration()
+          + getAccelerationRotationXYZ()
+          + getPosition()
+          + getRotationSpeedXYZ()
+          + getRotationXYZ()
+          + getSpeed()
+          + getT()
+          + getVitesse()
+          + getVitesseRotationXYZ()
+          + setAcceleration()
+          + setPosition()
+          + setT()
+          + setVitesse()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      abstract class enstabretagne.monitor.implementation.Representation3D {
+          + Representation3D()
+          + getGeneral3DSettings()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.UniversalMonitor {
+          - rateLogicalTimeOverRealTime : double
+          + UniversalMonitor()
+          + exit()
+          + getLogicalTimeSpeed()
+          + pause()
+          + run()
+          + runPlan()
+          + setLogicalTimeSpeed()
+          + stop()
+      }
+    }
+  }
+  
+
+  namespace enstabretagne.monitor {
+    namespace implementation {
+      class enstabretagne.monitor.implementation.XYZRotator2 {
+          {static} + computeRotationXYZ()
+          {static} + getDirectionFromAngle()
+          {static} + getTransformByAngle()
+          {static} + getTransformByDirection()
+      }
+    }
+  }
+  
+
+  enstabretagne.monitor.implementation.AbstractMonitor .up.|> enstabretagne.monitor.IMonitor
+  enstabretagne.monitor.implementation.AbstractMonitor o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.monitor.implementation.AbstractMonitor o-- enstabretagne.simulation.components.implementation.SimScenario : currentScenario
+  enstabretagne.monitor.implementation.AbstractMonitor o-- enstabretagne.monitor.implementation.ExperiencePlan : xpPlan
+  enstabretagne.monitor.implementation.ExperiencePlan .up.|> enstabretagne.monitor.IExperiencePlan
+  enstabretagne.monitor.implementation.FX3DMonitor2 .up.|> enstabretagne.monitor.IMonitor
+  enstabretagne.monitor.implementation.FX3DMonitor2 -up-|> javafx.application.Application
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.monitor.implementation.CameraManager : camManager
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.simulation.core.ISimEngine : engine
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.monitor.interfaces.IMovable : toFollow
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.base.time.LogicalDuration : RT_updateDelay
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.simulation.components.implementation.SimScenario : currentScenario
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.base.time.LogicalDuration : updateDelay
+  enstabretagne.monitor.implementation.FX3DMonitor2 o-- enstabretagne.monitor.implementation.ExperiencePlan : xpPlan
+  enstabretagne.monitor.implementation.FX3DMonitor2 +-down- enstabretagne.monitor.implementation.FX3DMonitor2.UnTest
+  enstabretagne.monitor.implementation.MovableState .up.|> enstabretagne.monitor.interfaces.IMovable
+  enstabretagne.monitor.implementation.MovableState o-- enstabretagne.base.time.LogicalDateTime : t
+  enstabretagne.monitor.implementation.Representation3D .up.|> enstabretagne.monitor.IDrawAction
+  enstabretagne.monitor.implementation.Representation3D o-- enstabretagne.monitor.ObjTo3DMappingSettings : general3DSettings
+  enstabretagne.monitor.implementation.UniversalMonitor .up.|> enstabretagne.monitor.IMonitor
+  enstabretagne.monitor.implementation.UniversalMonitor -up-|> enstabretagne.monitor.implementation.AbstractMonitor
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
